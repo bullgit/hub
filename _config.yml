@@ -1,7 +1,25 @@
 # the basic jekyll setup
 encoding: utf-8
-source: ./app/bg_repo_db.html
+source: ./app/bg_repo_db
 destination: ./app/_db
 
 repository: bullgit/bullgit.github.io
-gems: ['jekyll-github-metadata']
+gems: ['jekyll-github-metadata','algoliasearch-jekyll']
+algolia:
+  application_id: 'HMN1DHEQL1'
+  index_name:     'bullgit_repos'
+  excluded_files:
+    - index.html
+    - 404.html
+    - events.html
+    - favicon.ico
+    - members.html
+    - robots.txt
+    - /scripts
+    - /styles
+    - /images
+    - /bower_components
+
+
+
+

@@ -1,0 +1,8 @@
+---
+#doesn't matter what's here, as long as it is here
+---
+
+{% for repository in site.github.public_repositories %}
+  {{site.github.public_repositories|jsonify}}
+{% endfor %}
+

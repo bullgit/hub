@@ -107,8 +107,13 @@ header {
     font-weight: 300;
   }
 }
-select {
+ select {
   margin-left: 8px;
+  -webkit-appearance: none;
+  width: calc(100% - 16px);
+  padding: 8px;
+  background: transparent;
+  border-width: 2px;
 }
 
 .jumbotron {
@@ -255,6 +260,18 @@ select {
 
     h3{
       padding-left: 16px;
+       text-overflow: ellipsis; 
+      white-space: nowrap; 
+      overflow: hidden;
+      width: 75%;
+      font-size: 1.25rem;
+    }
+
+    a {
+ text-overflow: ellipsis; 
+      white-space: nowrap; 
+      overflow: hidden;
+      width: 100%;
     }
   }
 
@@ -437,8 +454,10 @@ nav {
   z-index: 200;
   border-right: 1px solid #ccc;
 
-  section div {
+  section > div {
     position: relative;
+    float: left;
+    width: 100%;
   }
 
   em {
@@ -685,6 +704,9 @@ ul.github-tracker .ais-hits--item:hover {
   float: left;
   width: 100%;
   cursor: pointer;
+  transform: scale(0.95);
+  transition: background 0.3s ease;
+
   &:hover {
     background: #fff !important;
     a {
@@ -698,6 +720,8 @@ ul.github-tracker .ais-hits--item:hover {
     width: 70%;
     height: 100%;
     float: left;
+    transition: background 0.3s ease, color 0.3s ease;
+    
   }
 
   &:after {
