@@ -5,7 +5,7 @@ A kind of website referencing the gitches, the bullgit repos, and more. Using Al
 --- 
 
 ### Install
-    - Clone the repo
-    - cd /repo/path
-    - `npm install`
-    - `gulp watch`
+- Clone the repo
+- cd /repo/path
+- `npm install`
+- `gulp watch`
