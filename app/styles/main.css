@@ -94,6 +94,11 @@ header h3, header h4 {
 
 select {
   margin-left: 8px;
+  -webkit-appearance: none;
+  width: calc(100% - 16px);
+  padding: 8px;
+  background: transparent;
+  border-width: 2px;
 }
 
 .jumbotron {
@@ -240,6 +245,17 @@ select {
 }
 .card header h3 {
   padding-left: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 75%;
+  font-size: 1.25rem;
+}
+.card header a {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
 }
 .card section, .card footer {
   padding: 16px;
@@ -403,8 +419,10 @@ nav {
   z-index: 200;
   border-right: 1px solid #ccc;
 }
-nav section div {
+nav section > div {
   position: relative;
+  float: left;
+  width: 100%;
 }
 nav em {
   float: left;
@@ -803,13 +821,13 @@ ul.github-tracker .ais-hits--item:hover {
 }
 
 .lang-link[class$="nix"] {
-  background: linear-gradient(to bottom, #b1b1ff, #6464ff) !important;
+  background: linear-gradient(to bottom, #b1b1ff, #6565ff) !important;
 }
 .lang-link[class$="nix"] a {
-  background: linear-gradient(to bottom, #b1b1ff, #6464ff) !important;
+  background: linear-gradient(to bottom, #b1b1ff, #6565ff) !important;
 }
 .lang-link[class$="nix"]:after {
-  background: linear-gradient(to bottom, #b1b1ff, #6464ff);
+  background: linear-gradient(to bottom, #b1b1ff, #6565ff);
 }
 .lang-link[class$="nix"]:hover a {
   color: #7E7EFF !important;
@@ -946,13 +964,13 @@ ul.github-tracker .ais-hits--item:hover {
 }
 
 .lang-link[class$="objective-c"] {
-  background: linear-gradient(to bottom, #76adff, #297fff) !important;
+  background: linear-gradient(to bottom, #76adff, #2a7fff) !important;
 }
 .lang-link[class$="objective-c"] a {
-  background: linear-gradient(to bottom, #76adff, #297fff) !important;
+  background: linear-gradient(to bottom, #76adff, #2a7fff) !important;
 }
 .lang-link[class$="objective-c"]:after {
-  background: linear-gradient(to bottom, #76adff, #297fff);
+  background: linear-gradient(to bottom, #76adff, #2a7fff);
 }
 .lang-link[class$="objective-c"]:hover a {
   color: #438EFF !important;
@@ -1336,13 +1354,13 @@ ul.github-tracker .ais-hits--item:hover {
 }
 
 .lang-link[class$="red"] {
-  background: linear-gradient(to bottom, #ff2222, #d40000) !important;
+  background: linear-gradient(to bottom, #ff2222, #d50000) !important;
 }
 .lang-link[class$="red"] a {
-  background: linear-gradient(to bottom, #ff2222, #d40000) !important;
+  background: linear-gradient(to bottom, #ff2222, #d50000) !important;
 }
 .lang-link[class$="red"]:after {
-  background: linear-gradient(to bottom, #ff2222, #d40000);
+  background: linear-gradient(to bottom, #ff2222, #d50000);
 }
 .lang-link[class$="red"]:hover a {
   color: #EE0000 !important;
@@ -1440,26 +1458,26 @@ ul.github-tracker .ais-hits--item:hover {
 }
 
 .lang-link[class$="swift"] {
-  background: linear-gradient(to bottom, #ffc378, #ffa12b) !important;
+  background: linear-gradient(to bottom, #ffc378, #ffa12c) !important;
 }
 .lang-link[class$="swift"] a {
-  background: linear-gradient(to bottom, #ffc378, #ffa12b) !important;
+  background: linear-gradient(to bottom, #ffc378, #ffa12c) !important;
 }
 .lang-link[class$="swift"]:after {
-  background: linear-gradient(to bottom, #ffc378, #ffa12b);
+  background: linear-gradient(to bottom, #ffc378, #ffa12c);
 }
 .lang-link[class$="swift"]:hover a {
   color: #FFAC45 !important;
 }
 
 .lang-link[class$="c"] {
-  background: linear-gradient(to bottom, #6e6e6e, #484848) !important;
+  background: linear-gradient(to bottom, #6f6f6f, #484848) !important;
 }
 .lang-link[class$="c"] a {
-  background: linear-gradient(to bottom, #6e6e6e, #484848) !important;
+  background: linear-gradient(to bottom, #6f6f6f, #484848) !important;
 }
 .lang-link[class$="c"]:after {
-  background: linear-gradient(to bottom, #6e6e6e, #484848);
+  background: linear-gradient(to bottom, #6f6f6f, #484848);
 }
 .lang-link[class$="c"]:hover a {
   color: #555555 !important;
@@ -1479,13 +1497,13 @@ ul.github-tracker .ais-hits--item:hover {
 }
 
 .lang-link[class$="isabelle"] {
-  background: linear-gradient(to bottom, #ffff32, #e4e500) !important;
+  background: linear-gradient(to bottom, #ffff32, #e5e500) !important;
 }
 .lang-link[class$="isabelle"] a {
-  background: linear-gradient(to bottom, #ffff32, #e4e500) !important;
+  background: linear-gradient(to bottom, #ffff32, #e5e500) !important;
 }
 .lang-link[class$="isabelle"]:after {
-  background: linear-gradient(to bottom, #ffff32, #e4e500);
+  background: linear-gradient(to bottom, #ffff32, #e5e500);
 }
 .lang-link[class$="isabelle"]:hover a {
   color: #FEFE00 !important;
@@ -1648,13 +1666,13 @@ ul.github-tracker .ais-hits--item:hover {
 }
 
 .lang-link[class$="blitzmax"] {
-  background: linear-gradient(to bottom, #ff7d01, #b35800) !important;
+  background: linear-gradient(to bottom, #ff7d01, #b45800) !important;
 }
 .lang-link[class$="blitzmax"] a {
-  background: linear-gradient(to bottom, #ff7d01, #b35800) !important;
+  background: linear-gradient(to bottom, #ff7d01, #b45800) !important;
 }
 .lang-link[class$="blitzmax"]:after {
-  background: linear-gradient(to bottom, #ff7d01, #b35800);
+  background: linear-gradient(to bottom, #ff7d01, #b45800);
 }
 .lang-link[class$="blitzmax"]:hover a {
   color: #CD6400 !important;
@@ -1947,26 +1965,26 @@ ul.github-tracker .ais-hits--item:hover {
 }
 
 .lang-link[class$="flux"] {
-  background: linear-gradient(to bottom, #bbe2ff, #6ec1ff) !important;
+  background: linear-gradient(to bottom, #bbe2ff, #6fc1ff) !important;
 }
 .lang-link[class$="flux"] a {
-  background: linear-gradient(to bottom, #bbe2ff, #6ec1ff) !important;
+  background: linear-gradient(to bottom, #bbe2ff, #6fc1ff) !important;
 }
 .lang-link[class$="flux"]:after {
-  background: linear-gradient(to bottom, #bbe2ff, #6ec1ff);
+  background: linear-gradient(to bottom, #bbe2ff, #6fc1ff);
 }
 .lang-link[class$="flux"]:hover a {
   color: #88CCFF !important;
 }
 
 .lang-link[class$="netlogo"] {
-  background: linear-gradient(to bottom, #ff96a2, #ff495e) !important;
+  background: linear-gradient(to bottom, #ff96a2, #ff4a5e) !important;
 }
 .lang-link[class$="netlogo"] a {
-  background: linear-gradient(to bottom, #ff96a2, #ff495e) !important;
+  background: linear-gradient(to bottom, #ff96a2, #ff4a5e) !important;
 }
 .lang-link[class$="netlogo"]:after {
-  background: linear-gradient(to bottom, #ff96a2, #ff495e);
+  background: linear-gradient(to bottom, #ff96a2, #ff4a5e);
 }
 .lang-link[class$="netlogo"]:hover a {
   color: #FF6375 !important;
@@ -2025,13 +2043,13 @@ ul.github-tracker .ais-hits--item:hover {
 }
 
 .lang-link[class$="pike"] {
-  background: linear-gradient(to bottom, #0070c3, #004476) !important;
+  background: linear-gradient(to bottom, #0070c3, #004477) !important;
 }
 .lang-link[class$="pike"] a {
-  background: linear-gradient(to bottom, #0070c3, #004476) !important;
+  background: linear-gradient(to bottom, #0070c3, #004477) !important;
 }
 .lang-link[class$="pike"]:after {
-  background: linear-gradient(to bottom, #0070c3, #004476);
+  background: linear-gradient(to bottom, #0070c3, #004477);
 }
 .lang-link[class$="pike"]:hover a {
   color: #005390 !important;
@@ -2744,13 +2762,13 @@ ul.github-tracker .ais-hits--item:hover {
 }
 
 .lang-link[class$="papyrus"] {
-  background: linear-gradient(to bottom, #7f00ff, #5900b3) !important;
+  background: linear-gradient(to bottom, #8000ff, #5900b3) !important;
 }
 .lang-link[class$="papyrus"] a {
-  background: linear-gradient(to bottom, #7f00ff, #5900b3) !important;
+  background: linear-gradient(to bottom, #8000ff, #5900b3) !important;
 }
 .lang-link[class$="papyrus"]:after {
-  background: linear-gradient(to bottom, #7f00ff, #5900b3);
+  background: linear-gradient(to bottom, #8000ff, #5900b3);
 }
 .lang-link[class$="papyrus"]:hover a {
   color: #6600CC !important;
@@ -2770,13 +2788,13 @@ ul.github-tracker .ais-hits--item:hover {
 }
 
 .lang-link[class$="clean"] {
-  background: linear-gradient(to bottom, #5d9dc4, #38779c) !important;
+  background: linear-gradient(to bottom, #5d9ec5, #38779c) !important;
 }
 .lang-link[class$="clean"] a {
-  background: linear-gradient(to bottom, #5d9dc4, #38779c) !important;
+  background: linear-gradient(to bottom, #5d9ec5, #38779c) !important;
 }
 .lang-link[class$="clean"]:after {
-  background: linear-gradient(to bottom, #5d9dc4, #38779c);
+  background: linear-gradient(to bottom, #5d9ec5, #38779c);
 }
 .lang-link[class$="clean"]:hover a {
   color: #3F85AF !important;
@@ -2822,13 +2840,13 @@ ul.github-tracker .ais-hits--item:hover {
 }
 
 .lang-link[class$="standard-ml"] {
-  background: linear-gradient(to bottom, #e58091, #d8415b) !important;
+  background: linear-gradient(to bottom, #e58092, #d8415b) !important;
 }
 .lang-link[class$="standard-ml"] a {
-  background: linear-gradient(to bottom, #e58091, #d8415b) !important;
+  background: linear-gradient(to bottom, #e58092, #d8415b) !important;
 }
 .lang-link[class$="standard-ml"]:after {
-  background: linear-gradient(to bottom, #e58091, #d8415b);
+  background: linear-gradient(to bottom, #e58092, #d8415b);
 }
 .lang-link[class$="standard-ml"]:hover a {
   color: #DC566D !important;
@@ -2972,6 +2990,9 @@ ul.github-tracker .ais-hits--item:hover {
   float: left;
   width: 100%;
   cursor: pointer;
+  -webkit-transform: scale(0.95);
+  transform: scale(0.95);
+  transition: background 0.3s ease;
 }
 .lang-link:hover {
   background: #fff !important;
@@ -2985,6 +3006,7 @@ ul.github-tracker .ais-hits--item:hover {
   width: 70%;
   height: 100%;
   float: left;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 .lang-link:after {
   content: attr(data-count);

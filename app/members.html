@@ -60,24 +60,28 @@
               </div>
             </div>
 
+            <script>
+            var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 12
+  });
+  var marker = new google.maps.Marker({
+    position: {lat: -34.397, lng: 150.644},
+    map: map,
+    title: 'Hello World!'
+  });
+}
+</script>
+
             <!-- build:js scripts/main.js -->
-            <script src="scripts/github.js"></script>
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkrShxAp9y511Sem1UVpau7Qzx74aKZOU&callback=initMap">
+          </script>
             <!-- endbuild -->
             <script>
-      var map = new ol.Map({
-        target: 'map',
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.MapQuest({layer: 'sat'})
-          })
-        ],
-        view: new ol.View({
-          center: ol.proj.fromLonLat([30,30]),
-          zoom: 6
-        })
-      });
-
-
+      
 var searchMembers = instantsearch({
   appId: 'HMN1DHEQL1',
   apiKey: 'dc4f15ee8f2decc359c15e9e092bed4c',
@@ -100,23 +104,17 @@ var renderMap = {
     var g = document.querySelectorAll('.gitch');
     for(var i = 0; i < g.length; i++) {
       g[i].addEventListener('click', function(){
-        document.querySelector('#map').innerHTML = ''
+        // document.querySelector('#map').innerHTML = ''
         var ll = this.getAttribute('data-pos').split(',');
         var gitch = [ll[1],ll[0]]; // caution partner, read on...
-        // since we are using OSM, we have to transform the coordinates...
-        var gitchWebMercator = ol.proj.fromLonLat(gitch);
-        var map = new ol.Map({
-        target: 'map',
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.MapQuest({layer: 'sat'})
-          })
-        ],
-        view: new ol.View({
-          center: gitchWebMercator,
-          zoom: 6
-        })
-      });
+          map.setCenter(new google.maps.LatLng(parseFloat(ll[0]), parseFloat(ll[1])));
+
+          var marker = new google.maps.Marker({
+            position: {lat: parseFloat(ll[0]), lng: parseFloat(ll[1])},
+            map: map,
+            title: 'gitch here'
+          });
+          marker.setMap(map);
       })
     }
   } 
