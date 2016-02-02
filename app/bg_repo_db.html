@@ -1,4 +1,9 @@
+---
+#doesn't matter what's here, as long as it is here
+---
+
 {% for repository in site.github.public_repositories %}
   * [{{ repository.name }}]({{ repository.html_url }})
 {% endfor %}
 
+{% assign repos = site.github.public_repositories | sort: 'created_at' | reverse %}
