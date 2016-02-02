@@ -1,7 +1,7 @@
 # the basic jekyll setup
 encoding: utf-8
-source: ./app/bg_repo_db.html
-destination: ./app/_db
+source: ./bg_repo_db.html
+destination: ./_db
 
 repository: bullgit/bullgit.github.io
 gems: ['jekyll-github-metadata']
