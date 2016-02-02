@@ -3031,6 +3031,26 @@ ul.github-tracker .ais-hits--item:hover {
   background: #000 !important;
 }
 
+.ais-hits {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.ais-hits--item {
+  padding: 0 10px 20px;
+  width: 33.3333%;
+}
+
+.ais-hits--item .card {
+  width: 100%;
+  margin: 0;
+}
+
 @-webkit-keyframes pulse {
   0% {
     -webkit-transform: scale3d(1, 1, 1);
