@@ -3,7 +3,7 @@
 ---
 
 {% for repository in site.github.public_repositories | jsonify %}
-  * [{{ repository.name }}]({{ repository.html_url }})
+  {{site.github.public_repositories|jsonify}}
 {% endfor %}
 
 {% assign repos = site.github.public_repositories | sort: 'created_at' | reverse %}
