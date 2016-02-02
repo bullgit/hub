@@ -1,2 +1,10 @@
 # bullgit-hub
-A kind of website referencing the gitches, the bullgit repos, and more. Using Algolia and some other cool stuff. 
+
+A kind of website referencing the gitches, the bullgit repos, and more. Using Algolia and some other cool stuff.
+
+# Installation
+
+```
+npm install
+gulp watch
+```
