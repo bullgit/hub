@@ -1,0 +1,122 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>bullgolia</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+  <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+</head>
+<body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+
+
+
+<nav>something</nav>
+            <div class="container">
+
+
+               <div class="jumbotron">
+                <h1>bull<span>git-hub</span></h1>
+                <h3> <a href="/index.html" class="button">Repos</a> <a href="/members.html" class="button">Members</a> <a href="/events.html" class="button active">Events!</a></h3>
+
+                <div id="search-box_events"></div>
+
+              </div>
+             <!--  <textarea id="repo" style="float:left;width:33%;background:red"></textarea>
+              <textarea id="events" style="float:left;width:33%;background:blue"></textarea>
+              <textarea id="members" style="float:left;width:33%;background:green"></textarea>
+              <textarea id="teams" style="float:left;width:33%;background:orange"></textarea>
+              <div id="hooks" style="background:orange"></div> -->
+              <div class="row marketing content">
+                
+                
+                <ul id="hits-container_events" class="github-tracker">
+                  
+                </ul>
+
+              </div>
+
+              <div class="footer">
+                <p>♥ from the Yeoman team</p>
+              </div>
+            </div>
+
+            <!-- build:js scripts/main.js -->
+            <script src="scripts/github.js"></script>
+            <!-- endbuild -->
+            <script>
+      // calling the github function to fetch repos.
+      // github({
+      //   output: "[data-js='output']",
+      //   profile_type: "orgs",
+      //   name: "bullgit",
+      //   data_type: "repos?type=all",
+      //   useLoader: false,
+      //   response: 'repo'
+      // });
+
+      //  github({
+      //   output: "[data-js='output']",
+      //   profile_type: "orgs",
+      //   name: "bullgit",
+      //   data_type: "members?filter=all",
+      //   useLoader: false,
+      //   response: 'members'
+      // });  
+
+      //   github({
+      //   output: "[data-js='output']",
+      //   profile_type: "orgs",
+      //   name: "bullgit",
+      //   data_type: "events",
+      //   useLoader: false,
+      //   response: 'events'
+      // });  
+
+      //    github({
+      //   output: "[data-js='output']",
+      //   profile_type: "orgs",
+      //   name: "bullgit",
+      //   data_type: "teams",
+      //   useLoader: false,
+      //   response: 'teams'
+      // });  
+
+
+var searchEvents = instantsearch({
+  appId: 'HMN1DHEQL1',
+  apiKey: 'dc4f15ee8f2decc359c15e9e092bed4c',
+  indexName: 'bullgit_events',
+  urlSync: true
+}); 
+
+searchEvents.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '#search-box_events',
+    placeholder: 'Search for events...'
+  })
+  );
+
+var tpl = `<li>[<a href="{{{_highlightResult.payload.issue.html_url.value}}}" target="_blank" class="commit">{{created_at}}</a>] -  {{{_highlightResult.type.value}}} by <a href="{{{_highlightResult.actor.url.value}}}">{{{_highlightResult.actor.login.value}}}</a> on <a href="{{{_highlightResult.repo.url.value}}}">{{{_highlightResult.repo.name.value}}}</a></li>`
+searchEvents.addWidget(
+  instantsearch.widgets.hits({
+    container: '#hits-container_events',
+    templates: {
+      empty: 'No results',
+      item: tpl
+    },
+    hitsPerPage: 1000
+  })
+  );
+searchEvents.start();
+
+
+</script>
+</body>
+</html>

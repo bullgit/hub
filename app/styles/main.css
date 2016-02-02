@@ -1,0 +1,3043 @@
+a {
+  color: #4078C0 !important;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.button, .card .touchButtFront,
+.card .touchButtBack, #authors .ais-refinement-list--item {
+  position: relative;
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #333;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-color: #eee;
+  background-image: linear-gradient(#fcfcfc, #eee);
+  border: 1px solid #d5d5d5;
+  border-radius: 3px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-appearance: none;
+  margin: 8px;
+  text-decoration: none;
+}
+
+.card {
+  -webkit-animation: pulse 0.6s ease 0.1s;
+  animation: pulse 0.6s ease 0.1s;
+}
+
+.button.active {
+  background: linear-gradient(#f9fcff, #dee5f3);
+  border: 1px solid #c1c9d0;
+}
+.button.--red {
+  color: #900 !important;
+  text-align: center;
+  font-weight: bold !important;
+  width: 94%;
+  text-decoration: none;
+}
+.button.--red a {
+  color: #fff;
+  font-weight: bold !important;
+  text-decoration: none !important;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-weight: 300;
+}
+
+strong {
+  font-weight: bold;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: helvetica Neue, arial, sans-serif;
+  background: #E9EAED;
+  padding: 0 0;
+  font-size: 1em;
+}
+
+header {
+  float: left;
+  width: 100%;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.75);
+  padding: 2em 0;
+}
+header h1 {
+  font-size: 38px;
+  margin-bottom: 15px;
+}
+header h3, header h4 {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+select {
+  margin-left: 8px;
+}
+
+.jumbotron {
+  padding: 16px;
+  background: #FAFAFA;
+  float: left;
+  width: calc(100% - 280px);
+  min-height: 10vh;
+  left: 280px;
+  position: relative;
+}
+.jumbotron h1 {
+  display: block;
+  font-size: 2em;
+  -webkit-margin-before: 0.67em;
+  -webkit-margin-after: 0.67em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+  color: #1393d5;
+}
+.jumbotron h1 span {
+  color: black;
+  font-weight: bold;
+}
+.jumbotron input {
+  position: relative;
+  width: 100%;
+  min-height: 36px;
+  padding: 4px 12px;
+  font-size: 12px;
+  display: block;
+  line-height: 17px;
+  color: #333;
+  vertical-align: middle;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  outline: none;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+}
+
+.container {
+  float: left;
+  position: relative;
+  width: 100%;
+}
+
+.content {
+  width: calc(100% - 280px);
+  left: 280px;
+  top: 0;
+  float: left;
+  position: relative;
+  padding: 0 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-flow: column wrap;
+  flex-flow: column wrap;
+  -webkit-align-self: flex-start;
+  align-self: flex-start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+  -webkit-column-width: 320px;
+  -moz-column-width: 320px;
+  column-width: 320px;
+  -webkit-column-gap: 15px;
+  -moz-column-gap: 15px;
+  column-gap: 15px;
+}
+.content .container, .content [id*="hits-container"] {
+  float: left;
+  position: relative;
+  width: 100%;
+}
+
+.card {
+  display: -webkit-flex;
+  display: flex;
+  width: calc(25% - 16px);
+  box-shadow: 0 1em 4em rgba(0, 0, 0, 0.2);
+  height: auto;
+  background: #bfbfbf;
+  z-index: 100;
+  margin: 8px;
+  float: left;
+  color: #fff;
+  padding: 2px;
+  border-radius: 4px;
+  position: relative !important;
+  font-size: 1em;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+  -webkit-transform-origin: 50% 50% 0px;
+  transform-origin: 50% 50% 0px;
+  transition: -webkit-transform 300ms ease;
+  transition: transform 300ms ease;
+  z-index: 20;
+  min-width: 20%;
+}
+@media (max-width: 870px) {
+  .card {
+    width: 48%;
+    margin: 1%;
+  }
+}
+@media (max-width: 690px) {
+  .card {
+    width: 96%;
+    margin: 1% 2%;
+  }
+}
+.card:hover {
+  background: #d26911;
+}
+.card a {
+  color: currentColor;
+  text-decoration: none;
+}
+.card header {
+  background: #F5F5F5;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+}
+.card header h3, .card header h4 {
+  padding: 0;
+  margin: 0;
+  color: #4078C0;
+  font-weight: bold;
+  display: inline-block;
+}
+.card header h3 {
+  padding-left: 16px;
+}
+.card section, .card footer {
+  padding: 16px;
+  margin: 0;
+}
+.card section p, .card footer p {
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+.card section {
+  background: #FAFAFA;
+  border-bottom: 1px solid #e5e5e5;
+}
+.card footer {
+  position: relative;
+  overflow: hidden;
+  word-break: break-all;
+  font-size: 0.7rem;
+}
+.card .card_content {
+  float: left;
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  color: #666;
+  border-radius: 3px;
+  padding-bottom: 2em;
+  background: #f5f5f5;
+  overflow-y: hidden;
+}
+.card .card_content.user {
+  text-align: center !important;
+}
+.card .card_content.user img {
+  max-width: 30%;
+  display: block;
+  margin: 16px auto;
+  border-radius: 100%;
+}
+.card.rotated .card_content {
+  -webkit-transform: translateZ(10px);
+  transform: translateZ(10px);
+}
+.card.rotated header,
+.card.rotated section,
+.card.rotated footer {
+  -webkit-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+.card h1, .card h2, .card h3 {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+}
+.card h1 {
+  font-size: 3rem;
+}
+.card h3 {
+  font-size: 1.5rem;
+  line-height: 2;
+}
+.card .butt {
+  background-color: #f6f7f8;
+  border-radius: 3px;
+  color: #141823;
+  overflow: visible;
+  width: auto;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 20;
+  margin: 0;
+}
+.card .butt p {
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+.card .buttContent {
+  max-width: 100%;
+  border-radius: 3px;
+  display: block;
+  padding: 8px 8px 8px 30px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  overflow: hidden;
+  color: inherit;
+  font-size: 14px;
+  color: #666;
+  font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+.card .buttContent::-webkit-scrollbar {
+  display: none;
+}
+.card .buttContent header {
+  float: left;
+  width: 100%;
+  display: block;
+  padding: 16px;
+}
+.card .touchButtFront,
+.card .touchButtBack {
+  position: fixed;
+  display: inline-block;
+  color: currentcolor;
+  -moz-text-decoration-line: none;
+  text-decoration-line: none;
+  bottom: 0px;
+  right: 0px;
+  z-index: 10 !important;
+  -webkit-transform: translateZ(10px);
+  transform: translateZ(10px);
+}
+.card .touchButtFront {
+  background-color: #60b044;
+  background-image: linear-gradient(#8add6d, #60b044);
+  border: 1px solid #5ca941;
+  color: #fff !important;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+.pagination,
+footer,
+.search-results {
+  float: left;
+  width: 100%;
+}
+
+nav {
+  position: fixed;
+  width: 280px;
+  left: 0;
+  background: #fff;
+  height: 100%;
+  top: 0;
+  z-index: 200;
+  border-right: 1px solid #ccc;
+}
+nav section div {
+  position: relative;
+}
+nav em {
+  float: left;
+  margin-left: 16px;
+  background: transparent;
+  color: #fff;
+  font-size: 12px;
+  line-height: 2.5;
+  font-weight: bold;
+  box-shadow: inherit;
+  position: absolute;
+}
+nav header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e5e5e5;
+}
+nav header h2 {
+  margin: 0;
+  padding: 8px 0;
+}
+nav section div h4 {
+  float: left;
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 0.5rem;
+  background-color: #f5f5f5;
+  margin: 0;
+  border: 1px solid #d8d8d8;
+  padding: 9px 10px 10px;
+  font-size: 14px;
+  line-height: 17px;
+  display: block;
+  margin: 8px 0 16px;
+}
+nav footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  float: left;
+  text-align: center;
+  padding: 16px;
+  color: #666;
+}
+nav footer span {
+  font-style: italic;
+}
+
+#authors input {
+  display: none;
+}
+#authors .ais-refinement-list--item {
+  float: left;
+  display: inline-block;
+  background: linear-gradient(#f9fcff, #dee5f3);
+  border: 1px solid #c1c9d0;
+  cursor: pointer;
+}
+#authors .ais-refinement-list--item * {
+  cursor: pointer;
+}
+#authors .ais-refinement-list--item:hover {
+  background-image: linear-gradient(#f2f2f2, #e4e4e4);
+}
+#authors .ais-refinement-list--count {
+  display: inline-block;
+  padding: 2px 5px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+  color: #666;
+  background-color: #eee;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+#authors .ais-refinement-list--item__active .ais-refinement-list--count {
+  background: #74C658;
+  color: #fff;
+}
+
+#stats,
+.ais-refinement-list--header.ais-header {
+  text-align: center;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.ais-refinement-list--header.ais-header {
+  font-size: 18px;
+  margin-top: 10px;
+  float: left;
+  width: 100%;
+  text-align: left;
+  padding-left: 10px;
+}
+.ais-refinement-list--header.ais-header:after {
+  content: " :";
+}
+
+em {
+  color: #000;
+  font-style: normal;
+  background-image: linear-gradient(to bottom, #ffff33, yellow);
+  position: relative;
+  z-index: 9999;
+  padding: 0.25rem;
+  border-radius: 3px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.8), 0 1px 1px rgba(0, 0, 0, 0.8), 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+ul.github-tracker {
+  padding: 0;
+  border: 1px solid #eee;
+  width: 100%;
+  float: left;
+  height: auto;
+  border-radius: 3px;
+  margin-top: 8px;
+  list-style: none;
+}
+
+ul.github-tracker .ais-hits--item {
+  width: 100%;
+  cursor: pointer;
+  padding: 8px 8px;
+}
+
+ul.github-tracker .ais-hits--item:nth-child(odd) {
+  background: #F5F5F5;
+}
+
+ul.github-tracker .ais-hits--item:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+ul.github-tracker .ais-hits--item:hover {
+  background: #ffe;
+  box-shadow: inset 3px 0 0 #eee;
+}
+
+#commits {
+  font-size: .9rem;
+}
+
+#commits .commit {
+  font-family: "courier", serif;
+  color: #4078c0;
+  border-bottom: none;
+}
+
+#commits .date {
+  font-family: "courier", serif;
+  float: right;
+  font-style: 12px;
+}
+
+#commits .author {
+  font-weight: bold;
+}
+
+#commits .message,
+#commits .author {
+  color: #4e575b;
+}
+
+.stargazers {
+  display: block;
+  height: 44px;
+  float: right;
+  text-align: center;
+  line-height: 44px;
+  margin-top: 14px;
+  margin-bottom: 0;
+  position: absolute;
+  right: 8px;
+  top: 0;
+}
+.stargazers svg {
+  fill: #888;
+}
+.stargazers em {
+  background: inherit;
+  padding: inherit;
+  border: inherit;
+  border-radius: inherit;
+  font-size: inherit;
+  box-shadow: inherit;
+  trnasform: inherit;
+  font-size: 12px;
+  color: #888;
+  font-weight: 600;
+  float: left;
+  line-height: 2.05;
+  margin-right: 3px;
+}
+
+.lang-link[class$="apacheconf"] {
+  background: linear-gradient(to bottom, #df5682, #c42558) !important;
+}
+.lang-link[class$="apacheconf"] a {
+  background: linear-gradient(to bottom, #df5682, #c42558) !important;
+}
+.lang-link[class$="apacheconf"]:after {
+  background: linear-gradient(to bottom, #df5682, #c42558);
+}
+.lang-link[class$="apacheconf"]:hover a {
+  color: #D72B62 !important;
+}
+
+.lang-link[class$="mercury"] {
+  background: linear-gradient(to bottom, #ff5e5e, #ff1212) !important;
+}
+.lang-link[class$="mercury"] a {
+  background: linear-gradient(to bottom, #ff5e5e, #ff1212) !important;
+}
+.lang-link[class$="mercury"]:after {
+  background: linear-gradient(to bottom, #ff5e5e, #ff1212);
+}
+.lang-link[class$="mercury"]:hover a {
+  color: #FF2B2B !important;
+}
+
+.lang-link[class$="typescript"] {
+  background: linear-gradient(to bottom, #3795b0, #256476) !important;
+}
+.lang-link[class$="typescript"] a {
+  background: linear-gradient(to bottom, #3795b0, #256476) !important;
+}
+.lang-link[class$="typescript"]:after {
+  background: linear-gradient(to bottom, #3795b0, #256476);
+}
+.lang-link[class$="typescript"]:hover a {
+  color: #2B7489 !important;
+}
+
+.lang-link[class$="purebasic"] {
+  background: linear-gradient(to bottom, #7282a1, #505d77) !important;
+}
+.lang-link[class$="purebasic"] a {
+  background: linear-gradient(to bottom, #7282a1, #505d77) !important;
+}
+.lang-link[class$="purebasic"]:after {
+  background: linear-gradient(to bottom, #7282a1, #505d77);
+}
+.lang-link[class$="purebasic"]:hover a {
+  color: #5A6986 !important;
+}
+
+.lang-link[class$="self"] {
+  background: linear-gradient(to bottom, #069cdc, #046791) !important;
+}
+.lang-link[class$="self"] a {
+  background: linear-gradient(to bottom, #069cdc, #046791) !important;
+}
+.lang-link[class$="self"]:after {
+  background: linear-gradient(to bottom, #069cdc, #046791);
+}
+.lang-link[class$="self"]:hover a {
+  color: #0579AA !important;
+}
+
+.lang-link[class$="edn"] {
+  background: linear-gradient(to bottom, #e4817f, #d74340) !important;
+}
+.lang-link[class$="edn"] a {
+  background: linear-gradient(to bottom, #e4817f, #d74340) !important;
+}
+.lang-link[class$="edn"]:after {
+  background: linear-gradient(to bottom, #e4817f, #d74340);
+}
+.lang-link[class$="edn"]:hover a {
+  color: #DB5855 !important;
+}
+
+.lang-link[class$="newlisp"] {
+  background: linear-gradient(to bottom, #adc8e4, #74a1d1) !important;
+}
+.lang-link[class$="newlisp"] a {
+  background: linear-gradient(to bottom, #adc8e4, #74a1d1) !important;
+}
+.lang-link[class$="newlisp"]:after {
+  background: linear-gradient(to bottom, #adc8e4, #74a1d1);
+}
+.lang-link[class$="newlisp"]:hover a {
+  color: #87AED7 !important;
+}
+
+.lang-link[class$="rebol"] {
+  background: linear-gradient(to bottom, #43af73, #2e784f) !important;
+}
+.lang-link[class$="rebol"] a {
+  background: linear-gradient(to bottom, #43af73, #2e784f) !important;
+}
+.lang-link[class$="rebol"]:after {
+  background: linear-gradient(to bottom, #43af73, #2e784f);
+}
+.lang-link[class$="rebol"]:hover a {
+  color: #358A5B !important;
+}
+
+.lang-link[class$="frege"] {
+  background: linear-gradient(to bottom, #32d5ff, #00b6e5) !important;
+}
+.lang-link[class$="frege"] a {
+  background: linear-gradient(to bottom, #32d5ff, #00b6e5) !important;
+}
+.lang-link[class$="frege"]:after {
+  background: linear-gradient(to bottom, #32d5ff, #00b6e5);
+}
+.lang-link[class$="frege"]:hover a {
+  color: #00CAFE !important;
+}
+
+.lang-link[class$="dart"] {
+  background: linear-gradient(to bottom, #00e7db, #009b93) !important;
+}
+.lang-link[class$="dart"] a {
+  background: linear-gradient(to bottom, #00e7db, #009b93) !important;
+}
+.lang-link[class$="dart"]:after {
+  background: linear-gradient(to bottom, #00e7db, #009b93);
+}
+.lang-link[class$="dart"]:hover a {
+  color: #00B4AB !important;
+}
+
+.lang-link[class$="aspectj"] {
+  background: linear-gradient(to bottom, #bb7ac0, #9b4ca2) !important;
+}
+.lang-link[class$="aspectj"] a {
+  background: linear-gradient(to bottom, #bb7ac0, #9b4ca2) !important;
+}
+.lang-link[class$="aspectj"]:after {
+  background: linear-gradient(to bottom, #bb7ac0, #9b4ca2);
+}
+.lang-link[class$="aspectj"]:hover a {
+  color: #A957B0 !important;
+}
+
+.lang-link[class$="shell"] {
+  background: linear-gradient(to bottom, #a6e87c, #7adc3b) !important;
+  color: #333 !important;
+}
+.lang-link[class$="shell"] a {
+  background: linear-gradient(to bottom, #a6e87c, #7adc3b) !important;
+}
+.lang-link[class$="shell"]:after {
+  background: linear-gradient(to bottom, #a6e87c, #7adc3b);
+}
+.lang-link[class$="shell"]:hover a {
+  color: #89E051 !important;
+}
+.lang-link[class$="shell"] a {
+  color: #333 !important;
+}
+
+.lang-link[class$="web-ontology-language"] {
+  background: linear-gradient(to bottom, #c2deea, #89bfd6) !important;
+}
+.lang-link[class$="web-ontology-language"] a {
+  background: linear-gradient(to bottom, #c2deea, #89bfd6) !important;
+}
+.lang-link[class$="web-ontology-language"]:after {
+  background: linear-gradient(to bottom, #c2deea, #89bfd6);
+}
+.lang-link[class$="web-ontology-language"]:hover a {
+  color: #9CC9DD !important;
+}
+
+.lang-link[class$="xbase"] {
+  background: linear-gradient(to bottom, #5b525b, #332e33) !important;
+}
+.lang-link[class$="xbase"] a {
+  background: linear-gradient(to bottom, #5b525b, #332e33) !important;
+}
+.lang-link[class$="xbase"]:after {
+  background: linear-gradient(to bottom, #5b525b, #332e33);
+}
+.lang-link[class$="xbase"]:hover a {
+  color: #403A40 !important;
+}
+
+.lang-link[class$="eiffel"] {
+  background: linear-gradient(to bottom, #ac8772, #84614e) !important;
+}
+.lang-link[class$="eiffel"] a {
+  background: linear-gradient(to bottom, #ac8772, #84614e) !important;
+}
+.lang-link[class$="eiffel"]:after {
+  background: linear-gradient(to bottom, #ac8772, #84614e);
+}
+.lang-link[class$="eiffel"]:hover a {
+  color: #946D57 !important;
+}
+
+.lang-link[class$="nix"] {
+  background: linear-gradient(to bottom, #b1b1ff, #6464ff) !important;
+}
+.lang-link[class$="nix"] a {
+  background: linear-gradient(to bottom, #b1b1ff, #6464ff) !important;
+}
+.lang-link[class$="nix"]:after {
+  background: linear-gradient(to bottom, #b1b1ff, #6464ff);
+}
+.lang-link[class$="nix"]:hover a {
+  color: #7E7EFF !important;
+}
+
+.lang-link[class$="raml"] {
+  background: linear-gradient(to bottom, #a9e7fc, #5ed2fa) !important;
+}
+.lang-link[class$="raml"] a {
+  background: linear-gradient(to bottom, #a9e7fc, #5ed2fa) !important;
+}
+.lang-link[class$="raml"]:after {
+  background: linear-gradient(to bottom, #a9e7fc, #5ed2fa);
+}
+.lang-link[class$="raml"]:hover a {
+  color: #77D9FB !important;
+}
+
+.lang-link[class$="mtml"] {
+  background: linear-gradient(to bottom, #e3f3fb, #a1d8f1) !important;
+}
+.lang-link[class$="mtml"] a {
+  background: linear-gradient(to bottom, #e3f3fb, #a1d8f1) !important;
+}
+.lang-link[class$="mtml"]:after {
+  background: linear-gradient(to bottom, #e3f3fb, #a1d8f1);
+}
+.lang-link[class$="mtml"]:hover a {
+  color: #B7E1F4 !important;
+}
+
+.lang-link[class$="elixir"] {
+  background: linear-gradient(to bottom, #8a5d9e, #60416e) !important;
+}
+.lang-link[class$="elixir"] a {
+  background: linear-gradient(to bottom, #8a5d9e, #60416e) !important;
+}
+.lang-link[class$="elixir"]:after {
+  background: linear-gradient(to bottom, #8a5d9e, #60416e);
+}
+.lang-link[class$="elixir"]:hover a {
+  color: #6E4A7E !important;
+}
+
+.lang-link[class$="sas"] {
+  background: linear-gradient(to bottom, #cb6451, #9f4130) !important;
+}
+.lang-link[class$="sas"] a {
+  background: linear-gradient(to bottom, #cb6451, #9f4130) !important;
+}
+.lang-link[class$="sas"]:after {
+  background: linear-gradient(to bottom, #cb6451, #9f4130);
+}
+.lang-link[class$="sas"]:hover a {
+  color: #B34936 !important;
+}
+
+.lang-link[class$="agda"] {
+  background: linear-gradient(to bottom, #427387, #294754) !important;
+}
+.lang-link[class$="agda"] a {
+  background: linear-gradient(to bottom, #427387, #294754) !important;
+}
+.lang-link[class$="agda"]:after {
+  background: linear-gradient(to bottom, #427387, #294754);
+}
+.lang-link[class$="agda"]:hover a {
+  color: #315665 !important;
+}
+
+.lang-link[class$="wisp"] {
+  background: linear-gradient(to bottom, #9ba5de, #6271cb) !important;
+}
+.lang-link[class$="wisp"] a {
+  background: linear-gradient(to bottom, #9ba5de, #6271cb) !important;
+}
+.lang-link[class$="wisp"]:after {
+  background: linear-gradient(to bottom, #9ba5de, #6271cb);
+}
+.lang-link[class$="wisp"]:hover a {
+  color: #7582D1 !important;
+}
+
+.lang-link[class$="d"] {
+  background: linear-gradient(to bottom, #fde39f, #fbcd54) !important;
+}
+.lang-link[class$="d"] a {
+  background: linear-gradient(to bottom, #fde39f, #fbcd54) !important;
+}
+.lang-link[class$="d"]:after {
+  background: linear-gradient(to bottom, #fde39f, #fbcd54);
+}
+.lang-link[class$="d"]:hover a {
+  color: #FCD46D !important;
+}
+
+.lang-link[class$="kotlin"] {
+  background: linear-gradient(to bottom, #f07ffb, #e734f9) !important;
+}
+.lang-link[class$="kotlin"] a {
+  background: linear-gradient(to bottom, #f07ffb, #e734f9) !important;
+}
+.lang-link[class$="kotlin"]:after {
+  background: linear-gradient(to bottom, #f07ffb, #e734f9);
+}
+.lang-link[class$="kotlin"]:hover a {
+  color: #EA4DFA !important;
+}
+
+.lang-link[class$="opal"] {
+  background: linear-gradient(to bottom, white, #f2e1cc) !important;
+}
+.lang-link[class$="opal"] a {
+  background: linear-gradient(to bottom, white, #f2e1cc) !important;
+}
+.lang-link[class$="opal"]:after {
+  background: linear-gradient(to bottom, white, #f2e1cc);
+}
+.lang-link[class$="opal"]:hover a {
+  color: #F7EDE0 !important;
+}
+
+.lang-link[class$="crystal"] {
+  background: linear-gradient(to bottom, #9184a7, #6b5c82) !important;
+}
+.lang-link[class$="crystal"] a {
+  background: linear-gradient(to bottom, #9184a7, #6b5c82) !important;
+}
+.lang-link[class$="crystal"]:after {
+  background: linear-gradient(to bottom, #9184a7, #6b5c82);
+}
+.lang-link[class$="crystal"]:hover a {
+  color: #776791 !important;
+}
+
+.lang-link[class$="objective-c"] {
+  background: linear-gradient(to bottom, #76adff, #297fff) !important;
+}
+.lang-link[class$="objective-c"] a {
+  background: linear-gradient(to bottom, #76adff, #297fff) !important;
+}
+.lang-link[class$="objective-c"]:after {
+  background: linear-gradient(to bottom, #76adff, #297fff);
+}
+.lang-link[class$="objective-c"]:hover a {
+  color: #438EFF !important;
+}
+
+.lang-link[class$="coldfusion-cfc"] {
+  background: linear-gradient(to bottom, #f15bdf, #eb15d1) !important;
+}
+.lang-link[class$="coldfusion-cfc"] a {
+  background: linear-gradient(to bottom, #f15bdf, #eb15d1) !important;
+}
+.lang-link[class$="coldfusion-cfc"]:after {
+  background: linear-gradient(to bottom, #f15bdf, #eb15d1);
+}
+.lang-link[class$="coldfusion-cfc"]:hover a {
+  color: #ED2CD6 !important;
+}
+
+.lang-link[class$="oz"] {
+  background: linear-gradient(to bottom, #fbc96a, #f9ae1f) !important;
+}
+.lang-link[class$="oz"] a {
+  background: linear-gradient(to bottom, #fbc96a, #f9ae1f) !important;
+}
+.lang-link[class$="oz"]:after {
+  background: linear-gradient(to bottom, #fbc96a, #f9ae1f);
+}
+.lang-link[class$="oz"]:hover a {
+  color: #FAB738 !important;
+}
+
+.lang-link[class$="mirah"] {
+  background: linear-gradient(to bottom, #d2ba60, #b39832) !important;
+}
+.lang-link[class$="mirah"] a {
+  background: linear-gradient(to bottom, #d2ba60, #b39832) !important;
+}
+.lang-link[class$="mirah"]:after {
+  background: linear-gradient(to bottom, #d2ba60, #b39832);
+}
+.lang-link[class$="mirah"]:hover a {
+  color: #C7A938 !important;
+}
+
+.lang-link[class$="objective-j"] {
+  background: linear-gradient(to bottom, #ff3f7d, #f2004e) !important;
+}
+.lang-link[class$="objective-j"] a {
+  background: linear-gradient(to bottom, #ff3f7d, #f2004e) !important;
+}
+.lang-link[class$="objective-j"]:after {
+  background: linear-gradient(to bottom, #ff3f7d, #f2004e);
+}
+.lang-link[class$="objective-j"]:hover a {
+  color: #FF0C5A !important;
+}
+
+.lang-link[class$="handlebars"] {
+  background: linear-gradient(to bottom, #0ccbfe, #0195bd) !important;
+}
+.lang-link[class$="handlebars"] a {
+  background: linear-gradient(to bottom, #0ccbfe, #0195bd) !important;
+}
+.lang-link[class$="handlebars"]:after {
+  background: linear-gradient(to bottom, #0ccbfe, #0195bd);
+}
+.lang-link[class$="handlebars"]:hover a {
+  color: #01A9D6 !important;
+}
+
+.lang-link[class$="gosu"] {
+  background: linear-gradient(to bottom, #9daa9b, #758772) !important;
+}
+.lang-link[class$="gosu"] a {
+  background: linear-gradient(to bottom, #9daa9b, #758772) !important;
+}
+.lang-link[class$="gosu"]:after {
+  background: linear-gradient(to bottom, #9daa9b, #758772);
+}
+.lang-link[class$="gosu"]:hover a {
+  color: #82937F !important;
+}
+
+.lang-link[class$="ruby"] {
+  background: linear-gradient(to bottom, #9b1d1e, #5b1112) !important;
+}
+.lang-link[class$="ruby"] a {
+  background: linear-gradient(to bottom, #9b1d1e, #5b1112) !important;
+}
+.lang-link[class$="ruby"]:after {
+  background: linear-gradient(to bottom, #9b1d1e, #5b1112);
+}
+.lang-link[class$="ruby"]:hover a {
+  color: #701516 !important;
+}
+
+.lang-link[class$="component-pascal"] {
+  background: linear-gradient(to bottom, #c2d976, #a7c83a) !important;
+}
+.lang-link[class$="component-pascal"] a {
+  background: linear-gradient(to bottom, #c2d976, #a7c83a) !important;
+}
+.lang-link[class$="component-pascal"]:after {
+  background: linear-gradient(to bottom, #c2d976, #a7c83a);
+}
+.lang-link[class$="component-pascal"]:hover a {
+  color: #B0CE4E !important;
+}
+
+.lang-link[class$="arc"] {
+  background: linear-gradient(to bottom, #be5dfe, #a011fe) !important;
+}
+.lang-link[class$="arc"] a {
+  background: linear-gradient(to bottom, #be5dfe, #a011fe) !important;
+}
+.lang-link[class$="arc"]:after {
+  background: linear-gradient(to bottom, #be5dfe, #a011fe);
+}
+.lang-link[class$="arc"]:hover a {
+  color: #AA2AFE !important;
+}
+
+.lang-link[class$="brainfuck"] {
+  background: linear-gradient(to bottom, #4b3b4d, #211a22) !important;
+}
+.lang-link[class$="brainfuck"] a {
+  background: linear-gradient(to bottom, #4b3b4d, #211a22) !important;
+}
+.lang-link[class$="brainfuck"]:after {
+  background: linear-gradient(to bottom, #4b3b4d, #211a22);
+}
+.lang-link[class$="brainfuck"]:hover a {
+  color: #2F2530 !important;
+}
+
+.lang-link[class$="nit"] {
+  background: linear-gradient(to bottom, #00cc1f, #008013) !important;
+}
+.lang-link[class$="nit"] a {
+  background: linear-gradient(to bottom, #00cc1f, #008013) !important;
+}
+.lang-link[class$="nit"]:after {
+  background: linear-gradient(to bottom, #00cc1f, #008013);
+}
+.lang-link[class$="nit"]:hover a {
+  color: #009917 !important;
+}
+
+.lang-link[class$="apl"] {
+  background: linear-gradient(to bottom, #729c7d, #507258) !important;
+}
+.lang-link[class$="apl"] a {
+  background: linear-gradient(to bottom, #729c7d, #507258) !important;
+}
+.lang-link[class$="apl"]:after {
+  background: linear-gradient(to bottom, #729c7d, #507258);
+}
+.lang-link[class$="apl"]:hover a {
+  color: #5A8164 !important;
+}
+
+.lang-link[class$="go"] {
+  background: linear-gradient(to bottom, #4f77c6, #315398) !important;
+}
+.lang-link[class$="go"] a {
+  background: linear-gradient(to bottom, #4f77c6, #315398) !important;
+}
+.lang-link[class$="go"]:after {
+  background: linear-gradient(to bottom, #4f77c6, #315398);
+}
+.lang-link[class$="go"]:hover a {
+  color: #375EAB !important;
+}
+
+.lang-link[class$="visual-basic"] {
+  background: linear-gradient(to bottom, #ab80c7, #884dad) !important;
+}
+.lang-link[class$="visual-basic"] a {
+  background: linear-gradient(to bottom, #ab80c7, #884dad) !important;
+}
+.lang-link[class$="visual-basic"]:after {
+  background: linear-gradient(to bottom, #ab80c7, #884dad);
+}
+.lang-link[class$="visual-basic"]:hover a {
+  color: #945DB7 !important;
+}
+
+.lang-link[class$="php"] {
+  background: linear-gradient(to bottom, #6876af, #465384) !important;
+}
+.lang-link[class$="php"] a {
+  background: linear-gradient(to bottom, #6876af, #465384) !important;
+}
+.lang-link[class$="php"]:after {
+  background: linear-gradient(to bottom, #6876af, #465384);
+}
+.lang-link[class$="php"]:hover a {
+  color: #4F5D95 !important;
+}
+
+.lang-link[class$="cirru"] {
+  background: linear-gradient(to bottom, white, #b3b3ff) !important;
+}
+.lang-link[class$="cirru"] a {
+  background: linear-gradient(to bottom, white, #b3b3ff) !important;
+}
+.lang-link[class$="cirru"]:after {
+  background: linear-gradient(to bottom, white, #b3b3ff);
+}
+.lang-link[class$="cirru"]:hover a {
+  color: #CCCCFF !important;
+}
+
+.lang-link[class$="sqf"] {
+  background: linear-gradient(to bottom, #595959, #323232) !important;
+}
+.lang-link[class$="sqf"] a {
+  background: linear-gradient(to bottom, #595959, #323232) !important;
+}
+.lang-link[class$="sqf"]:after {
+  background: linear-gradient(to bottom, #595959, #323232);
+}
+.lang-link[class$="sqf"]:hover a {
+  color: #3F3F3F !important;
+}
+
+.lang-link[class$="glyph"] {
+  background: linear-gradient(to bottom, #efe0c0, #dfc284) !important;
+}
+.lang-link[class$="glyph"] a {
+  background: linear-gradient(to bottom, #efe0c0, #dfc284) !important;
+}
+.lang-link[class$="glyph"]:after {
+  background: linear-gradient(to bottom, #efe0c0, #dfc284);
+}
+.lang-link[class$="glyph"]:hover a {
+  color: #E4CC98 !important;
+}
+
+.lang-link[class$="java"] {
+  background: linear-gradient(to bottom, #dd8f1f, #9a6416) !important;
+}
+.lang-link[class$="java"] a {
+  background: linear-gradient(to bottom, #dd8f1f, #9a6416) !important;
+}
+.lang-link[class$="java"]:after {
+  background: linear-gradient(to bottom, #dd8f1f, #9a6416);
+}
+.lang-link[class$="java"]:hover a {
+  color: #B07219 !important;
+}
+
+.lang-link[class$="scala"] {
+  background: linear-gradient(to bottom, #a3e0c7, #6acda4) !important;
+}
+.lang-link[class$="scala"] a {
+  background: linear-gradient(to bottom, #a3e0c7, #6acda4) !important;
+}
+.lang-link[class$="scala"]:after {
+  background: linear-gradient(to bottom, #a3e0c7, #6acda4);
+}
+.lang-link[class$="scala"]:hover a {
+  color: #7DD3B0 !important;
+}
+
+.lang-link[class$="makefile"] {
+  background: linear-gradient(to bottom, #59a222, #366315) !important;
+}
+.lang-link[class$="makefile"] a {
+  background: linear-gradient(to bottom, #59a222, #366315) !important;
+}
+.lang-link[class$="makefile"]:after {
+  background: linear-gradient(to bottom, #59a222, #366315);
+}
+.lang-link[class$="makefile"]:hover a {
+  color: #427819 !important;
+}
+
+.lang-link[class$="coldfusion"] {
+  background: linear-gradient(to bottom, #f15bdf, #eb15d1) !important;
+}
+.lang-link[class$="coldfusion"] a {
+  background: linear-gradient(to bottom, #f15bdf, #eb15d1) !important;
+}
+.lang-link[class$="coldfusion"]:after {
+  background: linear-gradient(to bottom, #f15bdf, #eb15d1);
+}
+.lang-link[class$="coldfusion"]:hover a {
+  color: #ED2CD6 !important;
+}
+
+.lang-link[class$="perl"] {
+  background: linear-gradient(to bottom, #03bff5, #0284aa) !important;
+}
+.lang-link[class$="perl"] a {
+  background: linear-gradient(to bottom, #03bff5, #0284aa) !important;
+}
+.lang-link[class$="perl"]:after {
+  background: linear-gradient(to bottom, #03bff5, #0284aa);
+}
+.lang-link[class$="perl"]:hover a {
+  color: #0298C3 !important;
+}
+
+.lang-link[class$="lua"] {
+  background: linear-gradient(to bottom, #0000b3, #000067) !important;
+}
+.lang-link[class$="lua"] a {
+  background: linear-gradient(to bottom, #0000b3, #000067) !important;
+}
+.lang-link[class$="lua"]:after {
+  background: linear-gradient(to bottom, #0000b3, #000067);
+}
+.lang-link[class$="lua"]:hover a {
+  color: #000080 !important;
+}
+
+.lang-link[class$="verilog"] {
+  background: linear-gradient(to bottom, #e1e3fc, #9ba1f6) !important;
+}
+.lang-link[class$="verilog"] a {
+  background: linear-gradient(to bottom, #e1e3fc, #9ba1f6) !important;
+}
+.lang-link[class$="verilog"]:after {
+  background: linear-gradient(to bottom, #e1e3fc, #9ba1f6);
+}
+.lang-link[class$="verilog"]:hover a {
+  color: #B2B7F8 !important;
+}
+
+.lang-link[class$="factor"] {
+  background: linear-gradient(to bottom, #80855b, #54583c) !important;
+}
+.lang-link[class$="factor"] a {
+  background: linear-gradient(to bottom, #80855b, #54583c) !important;
+}
+.lang-link[class$="factor"]:after {
+  background: linear-gradient(to bottom, #80855b, #54583c);
+}
+.lang-link[class$="factor"]:hover a {
+  color: #636746 !important;
+}
+
+.lang-link[class$="haxe"] {
+  background: linear-gradient(to bottom, #f9ab4f, #f38809) !important;
+}
+.lang-link[class$="haxe"] a {
+  background: linear-gradient(to bottom, #f9ab4f, #f38809) !important;
+}
+.lang-link[class$="haxe"]:after {
+  background: linear-gradient(to bottom, #f9ab4f, #f38809);
+}
+.lang-link[class$="haxe"]:hover a {
+  color: #F7941E !important;
+}
+
+.lang-link[class$="pure-data"] {
+  background: linear-gradient(to bottom, #b3e8a2, #80d965) !important;
+}
+.lang-link[class$="pure-data"] a {
+  background: linear-gradient(to bottom, #b3e8a2, #80d965) !important;
+}
+.lang-link[class$="pure-data"]:after {
+  background: linear-gradient(to bottom, #b3e8a2, #80d965);
+}
+.lang-link[class$="pure-data"]:hover a {
+  color: #91DE79 !important;
+}
+
+.lang-link[class$="forth"] {
+  background: linear-gradient(to bottom, #602b0f, #1e0d05) !important;
+}
+.lang-link[class$="forth"] a {
+  background: linear-gradient(to bottom, #602b0f, #1e0d05) !important;
+}
+.lang-link[class$="forth"]:after {
+  background: linear-gradient(to bottom, #602b0f, #1e0d05);
+}
+.lang-link[class$="forth"]:hover a {
+  color: #341708 !important;
+}
+
+.lang-link[class$="red"] {
+  background: linear-gradient(to bottom, #ff2222, #d40000) !important;
+}
+.lang-link[class$="red"] a {
+  background: linear-gradient(to bottom, #ff2222, #d40000) !important;
+}
+.lang-link[class$="red"]:after {
+  background: linear-gradient(to bottom, #ff2222, #d40000);
+}
+.lang-link[class$="red"]:hover a {
+  color: #EE0000 !important;
+}
+
+.lang-link[class$="hy"] {
+  background: linear-gradient(to bottom, #98abc4, #6783a9) !important;
+}
+.lang-link[class$="hy"] a {
+  background: linear-gradient(to bottom, #98abc4, #6783a9) !important;
+}
+.lang-link[class$="hy"]:after {
+  background: linear-gradient(to bottom, #98abc4, #6783a9);
+}
+.lang-link[class$="hy"]:hover a {
+  color: #7790B2 !important;
+}
+
+.lang-link[class$="volt"] {
+  background: linear-gradient(to bottom, #393939, #121212) !important;
+}
+.lang-link[class$="volt"] a {
+  background: linear-gradient(to bottom, #393939, #121212) !important;
+}
+.lang-link[class$="volt"]:after {
+  background: linear-gradient(to bottom, #393939, #121212);
+}
+.lang-link[class$="volt"]:hover a {
+  color: #1F1F1F !important;
+}
+
+.lang-link[class$="lsl"] {
+  background: linear-gradient(to bottom, #50b98a, #368763) !important;
+}
+.lang-link[class$="lsl"] a {
+  background: linear-gradient(to bottom, #50b98a, #368763) !important;
+}
+.lang-link[class$="lsl"]:after {
+  background: linear-gradient(to bottom, #50b98a, #368763);
+}
+.lang-link[class$="lsl"]:hover a {
+  color: #3D9970 !important;
+}
+
+.lang-link[class$="ec"] {
+  background: linear-gradient(to bottom, #b64778, #7f3254) !important;
+}
+.lang-link[class$="ec"] a {
+  background: linear-gradient(to bottom, #b64778, #7f3254) !important;
+}
+.lang-link[class$="ec"]:after {
+  background: linear-gradient(to bottom, #b64778, #7f3254);
+}
+.lang-link[class$="ec"]:hover a {
+  color: #913960 !important;
+}
+
+.lang-link[class$="coffeescript"] {
+  background: linear-gradient(to bottom, #305f9d, #1e3b62) !important;
+}
+.lang-link[class$="coffeescript"] a {
+  background: linear-gradient(to bottom, #305f9d, #1e3b62) !important;
+}
+.lang-link[class$="coffeescript"]:after {
+  background: linear-gradient(to bottom, #305f9d, #1e3b62);
+}
+.lang-link[class$="coffeescript"]:hover a {
+  color: #244776 !important;
+}
+
+.lang-link[class$="html"] {
+  background: linear-gradient(to bottom, #ea7050, #d4401a) !important;
+}
+.lang-link[class$="html"] a {
+  background: linear-gradient(to bottom, #ea7050, #d4401a) !important;
+}
+.lang-link[class$="html"]:after {
+  background: linear-gradient(to bottom, #ea7050, #d4401a);
+}
+.lang-link[class$="html"]:hover a {
+  color: #E44B23 !important;
+}
+
+.lang-link[class$="api-blueprint"] {
+  background: linear-gradient(to bottom, #4edbbb, #26b797) !important;
+}
+.lang-link[class$="api-blueprint"] a {
+  background: linear-gradient(to bottom, #4edbbb, #26b797) !important;
+}
+.lang-link[class$="api-blueprint"]:after {
+  background: linear-gradient(to bottom, #4edbbb, #26b797);
+}
+.lang-link[class$="api-blueprint"]:hover a {
+  color: #2ACCA8 !important;
+}
+
+.lang-link[class$="swift"] {
+  background: linear-gradient(to bottom, #ffc378, #ffa12b) !important;
+}
+.lang-link[class$="swift"] a {
+  background: linear-gradient(to bottom, #ffc378, #ffa12b) !important;
+}
+.lang-link[class$="swift"]:after {
+  background: linear-gradient(to bottom, #ffc378, #ffa12b);
+}
+.lang-link[class$="swift"]:hover a {
+  color: #FFAC45 !important;
+}
+
+.lang-link[class$="c"] {
+  background: linear-gradient(to bottom, #6e6e6e, #484848) !important;
+}
+.lang-link[class$="c"] a {
+  background: linear-gradient(to bottom, #6e6e6e, #484848) !important;
+}
+.lang-link[class$="c"]:after {
+  background: linear-gradient(to bottom, #6e6e6e, #484848);
+}
+.lang-link[class$="c"]:hover a {
+  color: #555555 !important;
+}
+
+.lang-link[class$="autohotkey"] {
+  background: linear-gradient(to bottom, #88acc9, #5388b1) !important;
+}
+.lang-link[class$="autohotkey"] a {
+  background: linear-gradient(to bottom, #88acc9, #5388b1) !important;
+}
+.lang-link[class$="autohotkey"]:after {
+  background: linear-gradient(to bottom, #88acc9, #5388b1);
+}
+.lang-link[class$="autohotkey"]:hover a {
+  color: #6594B9 !important;
+}
+
+.lang-link[class$="isabelle"] {
+  background: linear-gradient(to bottom, #ffff32, #e4e500) !important;
+}
+.lang-link[class$="isabelle"] a {
+  background: linear-gradient(to bottom, #ffff32, #e4e500) !important;
+}
+.lang-link[class$="isabelle"]:after {
+  background: linear-gradient(to bottom, #ffff32, #e4e500);
+}
+.lang-link[class$="isabelle"]:hover a {
+  color: #FEFE00 !important;
+}
+
+.lang-link[class$="clarion"] {
+  background: linear-gradient(to bottom, #e6a646, #c5811b) !important;
+}
+.lang-link[class$="clarion"] a {
+  background: linear-gradient(to bottom, #e6a646, #c5811b) !important;
+}
+.lang-link[class$="clarion"]:after {
+  background: linear-gradient(to bottom, #e6a646, #c5811b);
+}
+.lang-link[class$="clarion"]:hover a {
+  color: #DB901E !important;
+}
+
+.lang-link[class$="boo"] {
+  background: linear-gradient(to bottom, #e8ddde, #caafb2) !important;
+}
+.lang-link[class$="boo"] a {
+  background: linear-gradient(to bottom, #e8ddde, #caafb2) !important;
+}
+.lang-link[class$="boo"]:after {
+  background: linear-gradient(to bottom, #e8ddde, #caafb2);
+}
+.lang-link[class$="boo"]:hover a {
+  color: #D4BEC1 !important;
+}
+
+.lang-link[class$="autoit"] {
+  background: linear-gradient(to bottom, #294e78, #16293f) !important;
+}
+.lang-link[class$="autoit"] a {
+  background: linear-gradient(to bottom, #294e78, #16293f) !important;
+}
+.lang-link[class$="autoit"]:after {
+  background: linear-gradient(to bottom, #294e78, #16293f);
+}
+.lang-link[class$="autoit"]:hover a {
+  color: #1C3552 !important;
+}
+
+.lang-link[class$="clojure"] {
+  background: linear-gradient(to bottom, #e4817f, #d74340) !important;
+}
+.lang-link[class$="clojure"] a {
+  background: linear-gradient(to bottom, #e4817f, #d74340) !important;
+}
+.lang-link[class$="clojure"]:after {
+  background: linear-gradient(to bottom, #e4817f, #d74340);
+}
+.lang-link[class$="clojure"]:hover a {
+  color: #DB5855 !important;
+}
+
+.lang-link[class$="rust"] {
+  background: linear-gradient(to bottom, #e9c2ac, #d99670) !important;
+}
+.lang-link[class$="rust"] a {
+  background: linear-gradient(to bottom, #e9c2ac, #d99670) !important;
+}
+.lang-link[class$="rust"]:after {
+  background: linear-gradient(to bottom, #e9c2ac, #d99670);
+}
+.lang-link[class$="rust"]:hover a {
+  color: #DEA584 !important;
+}
+
+.lang-link[class$="prolog"] {
+  background: linear-gradient(to bottom, #9a3550, #612132) !important;
+}
+.lang-link[class$="prolog"] a {
+  background: linear-gradient(to bottom, #9a3550, #612132) !important;
+}
+.lang-link[class$="prolog"]:after {
+  background: linear-gradient(to bottom, #9a3550, #612132);
+}
+.lang-link[class$="prolog"]:hover a {
+  color: #74283C !important;
+}
+
+.lang-link[class$="sourcepawn"] {
+  background: linear-gradient(to bottom, #7fa317, #4b600e) !important;
+}
+.lang-link[class$="sourcepawn"] a {
+  background: linear-gradient(to bottom, #7fa317, #4b600e) !important;
+}
+.lang-link[class$="sourcepawn"]:after {
+  background: linear-gradient(to bottom, #7fa317, #4b600e);
+}
+.lang-link[class$="sourcepawn"]:hover a {
+  color: #5C7611 !important;
+}
+
+.lang-link[class$="ampl"] {
+  background: linear-gradient(to bottom, #f5f9e4, #deeaa6) !important;
+}
+.lang-link[class$="ampl"] a {
+  background: linear-gradient(to bottom, #f5f9e4, #deeaa6) !important;
+}
+.lang-link[class$="ampl"]:after {
+  background: linear-gradient(to bottom, #f5f9e4, #deeaa6);
+}
+.lang-link[class$="ampl"]:hover a {
+  color: #E6EFBB !important;
+}
+
+.lang-link[class$="fortran"] {
+  background: linear-gradient(to bottom, #6b60c5, #453a9e) !important;
+}
+.lang-link[class$="fortran"] a {
+  background: linear-gradient(to bottom, #6b60c5, #453a9e) !important;
+}
+.lang-link[class$="fortran"]:after {
+  background: linear-gradient(to bottom, #6b60c5, #453a9e);
+}
+.lang-link[class$="fortran"]:hover a {
+  color: #4D41B1 !important;
+}
+
+.lang-link[class$="antlr"] {
+  background: linear-gradient(to bottom, #d0e2ff, #84b3ff) !important;
+}
+.lang-link[class$="antlr"] a {
+  background: linear-gradient(to bottom, #d0e2ff, #84b3ff) !important;
+}
+.lang-link[class$="antlr"]:after {
+  background: linear-gradient(to bottom, #d0e2ff, #84b3ff);
+}
+.lang-link[class$="antlr"]:hover a {
+  color: #9DC3FF !important;
+}
+
+.lang-link[class$="harbour"] {
+  background: linear-gradient(to bottom, #327cf2, #0d56cb) !important;
+}
+.lang-link[class$="harbour"] a {
+  background: linear-gradient(to bottom, #327cf2, #0d56cb) !important;
+}
+.lang-link[class$="harbour"]:after {
+  background: linear-gradient(to bottom, #327cf2, #0d56cb);
+}
+.lang-link[class$="harbour"]:hover a {
+  color: #0E60E3 !important;
+}
+
+.lang-link[class$="tcl"] {
+  background: linear-gradient(to bottom, #efe0c0, #dfc284) !important;
+}
+.lang-link[class$="tcl"] a {
+  background: linear-gradient(to bottom, #efe0c0, #dfc284) !important;
+}
+.lang-link[class$="tcl"]:after {
+  background: linear-gradient(to bottom, #efe0c0, #dfc284);
+}
+.lang-link[class$="tcl"]:hover a {
+  color: #E4CC98 !important;
+}
+
+.lang-link[class$="blitzmax"] {
+  background: linear-gradient(to bottom, #ff7d01, #b35800) !important;
+}
+.lang-link[class$="blitzmax"] a {
+  background: linear-gradient(to bottom, #ff7d01, #b35800) !important;
+}
+.lang-link[class$="blitzmax"]:after {
+  background: linear-gradient(to bottom, #ff7d01, #b35800);
+}
+.lang-link[class$="blitzmax"]:hover a {
+  color: #CD6400 !important;
+}
+
+.lang-link[class$="piglatin"] {
+  background: linear-gradient(to bottom, white, #fabfca) !important;
+}
+.lang-link[class$="piglatin"] a {
+  background: linear-gradient(to bottom, white, #fabfca) !important;
+}
+.lang-link[class$="piglatin"]:after {
+  background: linear-gradient(to bottom, white, #fabfca);
+}
+.lang-link[class$="piglatin"]:hover a {
+  color: #FCD7DE !important;
+}
+
+.lang-link[class$="lasso"] {
+  background: linear-gradient(to bottom, #b3b3b3, #8c8c8c) !important;
+}
+.lang-link[class$="lasso"] a {
+  background: linear-gradient(to bottom, #b3b3b3, #8c8c8c) !important;
+}
+.lang-link[class$="lasso"]:after {
+  background: linear-gradient(to bottom, #b3b3b3, #8c8c8c);
+}
+.lang-link[class$="lasso"]:hover a {
+  color: #999999 !important;
+}
+
+.lang-link[class$="ecl"] {
+  background: linear-gradient(to bottom, #b71889, #730f56) !important;
+}
+.lang-link[class$="ecl"] a {
+  background: linear-gradient(to bottom, #b71889, #730f56) !important;
+}
+.lang-link[class$="ecl"]:after {
+  background: linear-gradient(to bottom, #b71889, #730f56);
+}
+.lang-link[class$="ecl"]:hover a {
+  color: #8A1267 !important;
+}
+
+.lang-link[class$="vhdl"] {
+  background: linear-gradient(to bottom, #cccfdf, #9da3c1) !important;
+}
+.lang-link[class$="vhdl"] a {
+  background: linear-gradient(to bottom, #cccfdf, #9da3c1) !important;
+}
+.lang-link[class$="vhdl"]:after {
+  background: linear-gradient(to bottom, #cccfdf, #9da3c1);
+}
+.lang-link[class$="vhdl"]:hover a {
+  color: #ADB2CB !important;
+}
+
+.lang-link[class$="elm"] {
+  background: linear-gradient(to bottom, #87c7d8, #4dacc6) !important;
+}
+.lang-link[class$="elm"] a {
+  background: linear-gradient(to bottom, #87c7d8, #4dacc6) !important;
+}
+.lang-link[class$="elm"]:after {
+  background: linear-gradient(to bottom, #87c7d8, #4dacc6);
+}
+.lang-link[class$="elm"]:hover a {
+  color: #60B5CC !important;
+}
+
+.lang-link[class$="propeller-spin"] {
+  background: linear-gradient(to bottom, #9db8bc, #70979d) !important;
+}
+.lang-link[class$="propeller-spin"] a {
+  background: linear-gradient(to bottom, #9db8bc, #70979d) !important;
+}
+.lang-link[class$="propeller-spin"]:after {
+  background: linear-gradient(to bottom, #9db8bc, #70979d);
+}
+.lang-link[class$="propeller-spin"]:hover a {
+  color: #7FA2A7 !important;
+}
+
+.lang-link[class$="idl"] {
+  background: linear-gradient(to bottom, #c7673e, #8f4829) !important;
+}
+.lang-link[class$="idl"] a {
+  background: linear-gradient(to bottom, #c7673e, #8f4829) !important;
+}
+.lang-link[class$="idl"]:after {
+  background: linear-gradient(to bottom, #c7673e, #8f4829);
+}
+.lang-link[class$="idl"]:hover a {
+  color: #A3522F !important;
+}
+
+.lang-link[class$="ats"] {
+  background: linear-gradient(to bottom, #2fe436, #17af1c) !important;
+}
+.lang-link[class$="ats"] a {
+  background: linear-gradient(to bottom, #2fe436, #17af1c) !important;
+}
+.lang-link[class$="ats"]:after {
+  background: linear-gradient(to bottom, #2fe436, #17af1c);
+}
+.lang-link[class$="ats"]:hover a {
+  color: #1AC620 !important;
+}
+
+.lang-link[class$="ada"] {
+  background: linear-gradient(to bottom, #30fda3, #02df7e) !important;
+}
+.lang-link[class$="ada"] a {
+  background: linear-gradient(to bottom, #30fda3, #02df7e) !important;
+}
+.lang-link[class$="ada"]:after {
+  background: linear-gradient(to bottom, #30fda3, #02df7e);
+}
+.lang-link[class$="ada"]:hover a {
+  color: #02F88C !important;
+}
+
+.lang-link[class$="nu"] {
+  background: linear-gradient(to bottom, #d5e66c, #c3db2a) !important;
+}
+.lang-link[class$="nu"] a {
+  background: linear-gradient(to bottom, #d5e66c, #c3db2a) !important;
+}
+.lang-link[class$="nu"]:after {
+  background: linear-gradient(to bottom, #d5e66c, #c3db2a);
+}
+.lang-link[class$="nu"]:hover a {
+  color: #C9DF40 !important;
+}
+
+.lang-link[class$="lfe"] {
+  background: linear-gradient(to bottom, #007500, #002900) !important;
+}
+.lang-link[class$="lfe"] a {
+  background: linear-gradient(to bottom, #007500, #002900) !important;
+}
+.lang-link[class$="lfe"]:after {
+  background: linear-gradient(to bottom, #007500, #002900);
+}
+.lang-link[class$="lfe"]:hover a {
+  color: #004200 !important;
+}
+
+.lang-link[class$="supercollider"] {
+  background: linear-gradient(to bottom, #725d12, #302708) !important;
+}
+.lang-link[class$="supercollider"] a {
+  background: linear-gradient(to bottom, #725d12, #302708) !important;
+}
+.lang-link[class$="supercollider"]:after {
+  background: linear-gradient(to bottom, #725d12, #302708);
+}
+.lang-link[class$="supercollider"]:hover a {
+  color: #46390B !important;
+}
+
+.lang-link[class$="oxygene"] {
+  background: linear-gradient(to bottom, #eeeff5, #bdc1da) !important;
+}
+.lang-link[class$="oxygene"] a {
+  background: linear-gradient(to bottom, #eeeff5, #bdc1da) !important;
+}
+.lang-link[class$="oxygene"]:after {
+  background: linear-gradient(to bottom, #eeeff5, #bdc1da);
+}
+.lang-link[class$="oxygene"]:hover a {
+  color: #CDD0E3 !important;
+}
+
+.lang-link[class$="asp"] {
+  background: linear-gradient(to bottom, #9172fe, #5627fd) !important;
+}
+.lang-link[class$="asp"] a {
+  background: linear-gradient(to bottom, #9172fe, #5627fd) !important;
+}
+.lang-link[class$="asp"]:after {
+  background: linear-gradient(to bottom, #9172fe, #5627fd);
+}
+.lang-link[class$="asp"]:hover a {
+  color: #6A40FD !important;
+}
+
+.lang-link[class$="assembly"] {
+  background: linear-gradient(to bottom, #996a1b, #583d0f) !important;
+}
+.lang-link[class$="assembly"] a {
+  background: linear-gradient(to bottom, #996a1b, #583d0f) !important;
+}
+.lang-link[class$="assembly"]:after {
+  background: linear-gradient(to bottom, #996a1b, #583d0f);
+}
+.lang-link[class$="assembly"]:hover a {
+  color: #6E4C13 !important;
+}
+
+.lang-link[class$="gnuplot"] {
+  background: linear-gradient(to bottom, #f8d4f8, #ec93ec) !important;
+}
+.lang-link[class$="gnuplot"] a {
+  background: linear-gradient(to bottom, #f8d4f8, #ec93ec) !important;
+}
+.lang-link[class$="gnuplot"]:after {
+  background: linear-gradient(to bottom, #f8d4f8, #ec93ec);
+}
+.lang-link[class$="gnuplot"]:hover a {
+  color: #F0A9F0 !important;
+}
+
+.lang-link[class$="jflex"] {
+  background: linear-gradient(to bottom, #ffec0f, #c2b200) !important;
+}
+.lang-link[class$="jflex"] a {
+  background: linear-gradient(to bottom, #ffec0f, #c2b200) !important;
+}
+.lang-link[class$="jflex"]:after {
+  background: linear-gradient(to bottom, #ffec0f, #c2b200);
+}
+.lang-link[class$="jflex"]:hover a {
+  color: #DBCA00 !important;
+}
+
+.lang-link[class$="netlinx"] {
+  background: linear-gradient(to bottom, #3db4ff, #0093f0) !important;
+}
+.lang-link[class$="netlinx"] a {
+  background: linear-gradient(to bottom, #3db4ff, #0093f0) !important;
+}
+.lang-link[class$="netlinx"]:after {
+  background: linear-gradient(to bottom, #3db4ff, #0093f0);
+}
+.lang-link[class$="netlinx"]:hover a {
+  color: #0AA0FF !important;
+}
+
+.lang-link[class$="turing"] {
+  background: linear-gradient(to bottom, #6cf946, #38ea08) !important;
+}
+.lang-link[class$="turing"] a {
+  background: linear-gradient(to bottom, #6cf946, #38ea08) !important;
+}
+.lang-link[class$="turing"]:after {
+  background: linear-gradient(to bottom, #6cf946, #38ea08);
+}
+.lang-link[class$="turing"]:hover a {
+  color: #45F715 !important;
+}
+
+.lang-link[class$="vala"] {
+  background: linear-gradient(to bottom, #fffefc, #f9d9b5) !important;
+}
+.lang-link[class$="vala"] a {
+  background: linear-gradient(to bottom, #fffefc, #f9d9b5) !important;
+}
+.lang-link[class$="vala"]:after {
+  background: linear-gradient(to bottom, #fffefc, #f9d9b5);
+}
+.lang-link[class$="vala"]:hover a {
+  color: #FBE5CD !important;
+}
+
+.lang-link[class$="processing"] {
+  background: linear-gradient(to bottom, #0cb5ff, #0084bf) !important;
+}
+.lang-link[class$="processing"] a {
+  background: linear-gradient(to bottom, #0cb5ff, #0084bf) !important;
+}
+.lang-link[class$="processing"]:after {
+  background: linear-gradient(to bottom, #0cb5ff, #0084bf);
+}
+.lang-link[class$="processing"]:hover a {
+  color: #0096D8 !important;
+}
+
+.lang-link[class$="arduino"] {
+  background: linear-gradient(to bottom, #d09fde, #b466ca) !important;
+}
+.lang-link[class$="arduino"] a {
+  background: linear-gradient(to bottom, #d09fde, #b466ca) !important;
+}
+.lang-link[class$="arduino"]:after {
+  background: linear-gradient(to bottom, #d09fde, #b466ca);
+}
+.lang-link[class$="arduino"]:hover a {
+  color: #BD79D1 !important;
+}
+
+.lang-link[class$="flux"] {
+  background: linear-gradient(to bottom, #bbe2ff, #6ec1ff) !important;
+}
+.lang-link[class$="flux"] a {
+  background: linear-gradient(to bottom, #bbe2ff, #6ec1ff) !important;
+}
+.lang-link[class$="flux"]:after {
+  background: linear-gradient(to bottom, #bbe2ff, #6ec1ff);
+}
+.lang-link[class$="flux"]:hover a {
+  color: #88CCFF !important;
+}
+
+.lang-link[class$="netlogo"] {
+  background: linear-gradient(to bottom, #ff96a2, #ff495e) !important;
+}
+.lang-link[class$="netlogo"] a {
+  background: linear-gradient(to bottom, #ff96a2, #ff495e) !important;
+}
+.lang-link[class$="netlogo"]:after {
+  background: linear-gradient(to bottom, #ff96a2, #ff495e);
+}
+.lang-link[class$="netlogo"]:hover a {
+  color: #FF6375 !important;
+}
+
+.lang-link[class$="css"] {
+  background: linear-gradient(to bottom, #6e4e9e, #4a356b) !important;
+}
+.lang-link[class$="css"] a {
+  background: linear-gradient(to bottom, #6e4e9e, #4a356b) !important;
+}
+.lang-link[class$="css"]:after {
+  background: linear-gradient(to bottom, #6e4e9e, #4a356b);
+}
+.lang-link[class$="css"]:hover a {
+  color: #563D7C !important;
+}
+
+.lang-link[class$="emacs-lisp"] {
+  background: linear-gradient(to bottom, #d18ee5, #b850d6) !important;
+}
+.lang-link[class$="emacs-lisp"] a {
+  background: linear-gradient(to bottom, #d18ee5, #b850d6) !important;
+}
+.lang-link[class$="emacs-lisp"]:after {
+  background: linear-gradient(to bottom, #d18ee5, #b850d6);
+}
+.lang-link[class$="emacs-lisp"]:hover a {
+  color: #C065DB !important;
+}
+
+.lang-link[class$="saltstack"] {
+  background: linear-gradient(to bottom, #7e7e7e, #575757) !important;
+}
+.lang-link[class$="saltstack"] a {
+  background: linear-gradient(to bottom, #7e7e7e, #575757) !important;
+}
+.lang-link[class$="saltstack"]:after {
+  background: linear-gradient(to bottom, #7e7e7e, #575757);
+}
+.lang-link[class$="saltstack"]:hover a {
+  color: #646464 !important;
+}
+
+.lang-link[class$="qml"] {
+  background: linear-gradient(to bottom, #56d123, #3b8f18) !important;
+}
+.lang-link[class$="qml"] a {
+  background: linear-gradient(to bottom, #56d123, #3b8f18) !important;
+}
+.lang-link[class$="qml"]:after {
+  background: linear-gradient(to bottom, #56d123, #3b8f18);
+}
+.lang-link[class$="qml"]:hover a {
+  color: #44A51C !important;
+}
+
+.lang-link[class$="pike"] {
+  background: linear-gradient(to bottom, #0070c3, #004476) !important;
+}
+.lang-link[class$="pike"] a {
+  background: linear-gradient(to bottom, #0070c3, #004476) !important;
+}
+.lang-link[class$="pike"]:after {
+  background: linear-gradient(to bottom, #0070c3, #004476);
+}
+.lang-link[class$="pike"]:hover a {
+  color: #005390 !important;
+}
+
+.lang-link[class$="lolcode"] {
+  background: linear-gradient(to bottom, #ffbf00, #b38600) !important;
+}
+.lang-link[class$="lolcode"] a {
+  background: linear-gradient(to bottom, #ffbf00, #b38600) !important;
+}
+.lang-link[class$="lolcode"]:after {
+  background: linear-gradient(to bottom, #ffbf00, #b38600);
+}
+.lang-link[class$="lolcode"]:hover a {
+  color: #CC9900 !important;
+}
+
+.lang-link[class$="ooc"] {
+  background: linear-gradient(to bottom, #c4c99f, #a6ae6e) !important;
+}
+.lang-link[class$="ooc"] a {
+  background: linear-gradient(to bottom, #c4c99f, #a6ae6e) !important;
+}
+.lang-link[class$="ooc"]:after {
+  background: linear-gradient(to bottom, #c4c99f, #a6ae6e);
+}
+.lang-link[class$="ooc"]:hover a {
+  color: #B0B77E !important;
+}
+
+.lang-link[class$="xc"] {
+  background: linear-gradient(to bottom, #b4f81c, #88c106) !important;
+}
+.lang-link[class$="xc"] a {
+  background: linear-gradient(to bottom, #b4f81c, #88c106) !important;
+}
+.lang-link[class$="xc"]:after {
+  background: linear-gradient(to bottom, #b4f81c, #88c106);
+}
+.lang-link[class$="xc"]:hover a {
+  color: #99DA07 !important;
+}
+
+.lang-link[class$="j"] {
+  background: linear-gradient(to bottom, #d1f6ff, #85e8ff) !important;
+}
+.lang-link[class$="j"] a {
+  background: linear-gradient(to bottom, #d1f6ff, #85e8ff) !important;
+}
+.lang-link[class$="j"]:after {
+  background: linear-gradient(to bottom, #d1f6ff, #85e8ff);
+}
+.lang-link[class$="j"]:hover a {
+  color: #9EEDFF !important;
+}
+
+.lang-link[class$="mask"] {
+  background: linear-gradient(to bottom, #fa9864, #f86719) !important;
+}
+.lang-link[class$="mask"] a {
+  background: linear-gradient(to bottom, #fa9864, #f86719) !important;
+}
+.lang-link[class$="mask"]:after {
+  background: linear-gradient(to bottom, #fa9864, #f86719);
+}
+.lang-link[class$="mask"]:hover a {
+  color: #F97732 !important;
+}
+
+.lang-link[class$="emberscript"] {
+  background: linear-gradient(to bottom, white, #ffddda) !important;
+}
+.lang-link[class$="emberscript"] a {
+  background: linear-gradient(to bottom, white, #ffddda) !important;
+}
+.lang-link[class$="emberscript"]:after {
+  background: linear-gradient(to bottom, white, #ffddda);
+}
+.lang-link[class$="emberscript"]:hover a {
+  color: #FFF4F3 !important;
+}
+
+.lang-link[class$="tex"] {
+  background: linear-gradient(to bottom, #578a21, #304c12) !important;
+}
+.lang-link[class$="tex"] a {
+  background: linear-gradient(to bottom, #578a21, #304c12) !important;
+}
+.lang-link[class$="tex"]:after {
+  background: linear-gradient(to bottom, #578a21, #304c12);
+}
+.lang-link[class$="tex"]:hover a {
+  color: #3D6117 !important;
+}
+
+.lang-link[class$="nemerle"] {
+  background: linear-gradient(to bottom, #4f4e8f, #34335e) !important;
+}
+.lang-link[class$="nemerle"] a {
+  background: linear-gradient(to bottom, #4f4e8f, #34335e) !important;
+}
+.lang-link[class$="nemerle"]:after {
+  background: linear-gradient(to bottom, #4f4e8f, #34335e);
+}
+.lang-link[class$="nemerle"]:hover a {
+  color: #3D3C6E !important;
+}
+
+.lang-link[class$="krl"] {
+  background: linear-gradient(to bottom, #3d662f, #1e3217) !important;
+}
+.lang-link[class$="krl"] a {
+  background: linear-gradient(to bottom, #3d662f, #1e3217) !important;
+}
+.lang-link[class$="krl"]:after {
+  background: linear-gradient(to bottom, #3d662f, #1e3217);
+}
+.lang-link[class$="krl"]:hover a {
+  color: #28431F !important;
+}
+
+.lang-link[class$="unified-parallel-c"] {
+  background: linear-gradient(to bottom, #755123, #3a2811) !important;
+}
+.lang-link[class$="unified-parallel-c"] a {
+  background: linear-gradient(to bottom, #755123, #3a2811) !important;
+}
+.lang-link[class$="unified-parallel-c"]:after {
+  background: linear-gradient(to bottom, #755123, #3a2811);
+}
+.lang-link[class$="unified-parallel-c"]:hover a {
+  color: #4E3617 !important;
+}
+
+.lang-link[class$="golo"] {
+  background: linear-gradient(to bottom, #af6f36, #754a24) !important;
+}
+.lang-link[class$="golo"] a {
+  background: linear-gradient(to bottom, #af6f36, #754a24) !important;
+}
+.lang-link[class$="golo"]:after {
+  background: linear-gradient(to bottom, #af6f36, #754a24);
+}
+.lang-link[class$="golo"]:hover a {
+  color: #88562A !important;
+}
+
+.lang-link[class$="fancy"] {
+  background: linear-gradient(to bottom, #9cb5c6, #6b91ab) !important;
+}
+.lang-link[class$="fancy"] a {
+  background: linear-gradient(to bottom, #9cb5c6, #6b91ab) !important;
+}
+.lang-link[class$="fancy"]:after {
+  background: linear-gradient(to bottom, #9cb5c6, #6b91ab);
+}
+.lang-link[class$="fancy"]:hover a {
+  color: #7B9DB4 !important;
+}
+
+.lang-link[class$="ocaml"] {
+  background: linear-gradient(to bottom, #66e85f, #29da20) !important;
+}
+.lang-link[class$="ocaml"] a {
+  background: linear-gradient(to bottom, #66e85f, #29da20) !important;
+}
+.lang-link[class$="ocaml"]:after {
+  background: linear-gradient(to bottom, #66e85f, #29da20);
+}
+.lang-link[class$="ocaml"]:hover a {
+  color: #3BE133 !important;
+}
+
+.lang-link[class$="shen"] {
+  background: linear-gradient(to bottom, #2c2531, #050405) !important;
+}
+.lang-link[class$="shen"] a {
+  background: linear-gradient(to bottom, #2c2531, #050405) !important;
+}
+.lang-link[class$="shen"]:after {
+  background: linear-gradient(to bottom, #2c2531, #050405);
+}
+.lang-link[class$="shen"]:hover a {
+  color: #120F14 !important;
+}
+
+.lang-link[class$="pascal"] {
+  background: linear-gradient(to bottom, #c2d976, #a7c83a) !important;
+}
+.lang-link[class$="pascal"] a {
+  background: linear-gradient(to bottom, #c2d976, #a7c83a) !important;
+}
+.lang-link[class$="pascal"]:after {
+  background: linear-gradient(to bottom, #c2d976, #a7c83a);
+}
+.lang-link[class$="pascal"]:hover a {
+  color: #B0CE4E !important;
+}
+
+.lang-link[class$="puppet"] {
+  background: linear-gradient(to bottom, #43379d, #2b2364) !important;
+}
+.lang-link[class$="puppet"] a {
+  background: linear-gradient(to bottom, #43379d, #2b2364) !important;
+}
+.lang-link[class$="puppet"]:after {
+  background: linear-gradient(to bottom, #43379d, #2b2364);
+}
+.lang-link[class$="puppet"]:hover a {
+  color: #332A77 !important;
+}
+
+.lang-link[class$="actionscript"] {
+  background: linear-gradient(to bottom, #b63a14, #71240c) !important;
+}
+.lang-link[class$="actionscript"] a {
+  background: linear-gradient(to bottom, #b63a14, #71240c) !important;
+}
+.lang-link[class$="actionscript"]:after {
+  background: linear-gradient(to bottom, #b63a14, #71240c);
+}
+.lang-link[class$="actionscript"]:hover a {
+  color: #882B0F !important;
+}
+
+.lang-link[class$="diff"] {
+  background: linear-gradient(to bottom, #b0e8e8, #74d7d7) !important;
+}
+.lang-link[class$="diff"] a {
+  background: linear-gradient(to bottom, #b0e8e8, #74d7d7) !important;
+}
+.lang-link[class$="diff"]:after {
+  background: linear-gradient(to bottom, #b0e8e8, #74d7d7);
+}
+.lang-link[class$="diff"]:hover a {
+  color: #88DDDD !important;
+}
+
+.lang-link[class$="ragel-in-ruby-host"] {
+  background: linear-gradient(to bottom, #ff9015, #c86900) !important;
+}
+.lang-link[class$="ragel-in-ruby-host"] a {
+  background: linear-gradient(to bottom, #ff9015, #c86900) !important;
+}
+.lang-link[class$="ragel-in-ruby-host"]:after {
+  background: linear-gradient(to bottom, #ff9015, #c86900);
+}
+.lang-link[class$="ragel-in-ruby-host"]:hover a {
+  color: #E17600 !important;
+}
+
+.lang-link[class$="fantom"] {
+  background: linear-gradient(to bottom, #f3f4f2, #cfd3c7) !important;
+}
+.lang-link[class$="fantom"] a {
+  background: linear-gradient(to bottom, #f3f4f2, #cfd3c7) !important;
+}
+.lang-link[class$="fantom"]:after {
+  background: linear-gradient(to bottom, #f3f4f2, #cfd3c7);
+}
+.lang-link[class$="fantom"]:hover a {
+  color: #DBDED5 !important;
+}
+
+.lang-link[class$="zephir"] {
+  background: linear-gradient(to bottom, #16b9cc, #0f7a87) !important;
+}
+.lang-link[class$="zephir"] a {
+  background: linear-gradient(to bottom, #16b9cc, #0f7a87) !important;
+}
+.lang-link[class$="zephir"]:after {
+  background: linear-gradient(to bottom, #16b9cc, #0f7a87);
+}
+.lang-link[class$="zephir"]:hover a {
+  color: #118F9E !important;
+}
+
+.lang-link[class$="smalltalk"] {
+  background: linear-gradient(to bottom, #839709, #444f05) !important;
+}
+.lang-link[class$="smalltalk"] a {
+  background: linear-gradient(to bottom, #839709, #444f05) !important;
+}
+.lang-link[class$="smalltalk"]:after {
+  background: linear-gradient(to bottom, #839709, #444f05);
+}
+.lang-link[class$="smalltalk"]:hover a {
+  color: #596706 !important;
+}
+
+.lang-link[class$="dm"] {
+  background: linear-gradient(to bottom, #579281, #3a6257) !important;
+}
+.lang-link[class$="dm"] a {
+  background: linear-gradient(to bottom, #579281, #3a6257) !important;
+}
+.lang-link[class$="dm"]:after {
+  background: linear-gradient(to bottom, #579281, #3a6257);
+}
+.lang-link[class$="dm"]:hover a {
+  color: #447265 !important;
+}
+
+.lang-link[class$="ioke"] {
+  background: linear-gradient(to bottom, #09acc4, #066c7b) !important;
+}
+.lang-link[class$="ioke"] a {
+  background: linear-gradient(to bottom, #09acc4, #066c7b) !important;
+}
+.lang-link[class$="ioke"]:after {
+  background: linear-gradient(to bottom, #09acc4, #066c7b);
+}
+.lang-link[class$="ioke"]:hover a {
+  color: #078193 !important;
+}
+
+.lang-link[class$="pogoscript"] {
+  background: linear-gradient(to bottom, #ff0c8f, #bf0066) !important;
+}
+.lang-link[class$="pogoscript"] a {
+  background: linear-gradient(to bottom, #ff0c8f, #bf0066) !important;
+}
+.lang-link[class$="pogoscript"]:after {
+  background: linear-gradient(to bottom, #ff0c8f, #bf0066);
+}
+.lang-link[class$="pogoscript"]:hover a {
+  color: #D80074 !important;
+}
+
+.lang-link[class$="livescript"] {
+  background: linear-gradient(to bottom, #61b3a0, #418777) !important;
+}
+.lang-link[class$="livescript"] a {
+  background: linear-gradient(to bottom, #61b3a0, #418777) !important;
+}
+.lang-link[class$="livescript"]:after {
+  background: linear-gradient(to bottom, #61b3a0, #418777);
+}
+.lang-link[class$="livescript"]:hover a {
+  color: #499886 !important;
+}
+
+.lang-link[class$="javascript"] {
+  background: linear-gradient(to bottom, #f5e989, #efdc42) !important;
+  color: #333 !important;
+}
+.lang-link[class$="javascript"] a {
+  background: linear-gradient(to bottom, #f5e989, #efdc42) !important;
+}
+.lang-link[class$="javascript"]:after {
+  background: linear-gradient(to bottom, #f5e989, #efdc42);
+}
+.lang-link[class$="javascript"]:hover a {
+  color: #F1E05A !important;
+}
+.lang-link[class$="javascript"] a {
+  color: #333 !important;
+}
+
+.lang-link[class$="viml"] {
+  background: linear-gradient(to bottom, #20cb60, #168941) !important;
+}
+.lang-link[class$="viml"] a {
+  background: linear-gradient(to bottom, #20cb60, #168941) !important;
+}
+.lang-link[class$="viml"]:after {
+  background: linear-gradient(to bottom, #20cb60, #168941);
+}
+.lang-link[class$="viml"]:hover a {
+  color: #199F4B !important;
+}
+
+.lang-link[class$="purescript"] {
+  background: linear-gradient(to bottom, #31394c, #13161d) !important;
+}
+.lang-link[class$="purescript"] a {
+  background: linear-gradient(to bottom, #31394c, #13161d) !important;
+}
+.lang-link[class$="purescript"]:after {
+  background: linear-gradient(to bottom, #31394c, #13161d);
+}
+.lang-link[class$="purescript"]:hover a {
+  color: #1D222D !important;
+}
+
+.lang-link[class$="abap"] {
+  background: linear-gradient(to bottom, #ed5571, #de183d) !important;
+}
+.lang-link[class$="abap"] a {
+  background: linear-gradient(to bottom, #ed5571, #de183d) !important;
+}
+.lang-link[class$="abap"]:after {
+  background: linear-gradient(to bottom, #ed5571, #de183d);
+}
+.lang-link[class$="abap"]:hover a {
+  color: #E8274B !important;
+}
+
+.lang-link[class$="matlab"] {
+  background: linear-gradient(to bottom, #cfb1c4, #b182a0) !important;
+}
+.lang-link[class$="matlab"] a {
+  background: linear-gradient(to bottom, #cfb1c4, #b182a0) !important;
+}
+.lang-link[class$="matlab"]:after {
+  background: linear-gradient(to bottom, #cfb1c4, #b182a0);
+}
+.lang-link[class$="matlab"]:hover a {
+  color: #BB92AC !important;
+}
+
+.lang-link[class$="slash"] {
+  background: linear-gradient(to bottom, #3398ff, #0071e6) !important;
+}
+.lang-link[class$="slash"] a {
+  background: linear-gradient(to bottom, #3398ff, #0071e6) !important;
+}
+.lang-link[class$="slash"]:after {
+  background: linear-gradient(to bottom, #3398ff, #0071e6);
+}
+.lang-link[class$="slash"]:hover a {
+  color: #007EFF !important;
+}
+
+.lang-link[class$="r"] {
+  background: linear-gradient(to bottom, #47a3ec, #167ed1) !important;
+}
+.lang-link[class$="r"] a {
+  background: linear-gradient(to bottom, #47a3ec, #167ed1) !important;
+}
+.lang-link[class$="r"]:after {
+  background: linear-gradient(to bottom, #47a3ec, #167ed1);
+}
+.lang-link[class$="r"]:hover a {
+  color: #198CE7 !important;
+}
+
+.lang-link[class$="erlang"] {
+  background: linear-gradient(to bottom, #cb59ae, #a53388) !important;
+}
+.lang-link[class$="erlang"] a {
+  background: linear-gradient(to bottom, #cb59ae, #a53388) !important;
+}
+.lang-link[class$="erlang"]:after {
+  background: linear-gradient(to bottom, #cb59ae, #a53388);
+}
+.lang-link[class$="erlang"]:hover a {
+  color: #B83998 !important;
+}
+
+.lang-link[class$="pan"] {
+  background: linear-gradient(to bottom, red, #b30000) !important;
+}
+.lang-link[class$="pan"] a {
+  background: linear-gradient(to bottom, red, #b30000) !important;
+}
+.lang-link[class$="pan"]:after {
+  background: linear-gradient(to bottom, red, #b30000);
+}
+.lang-link[class$="pan"]:hover a {
+  color: #CC0000 !important;
+}
+
+.lang-link[class$="lookml"] {
+  background: linear-gradient(to bottom, #8338a7, #56256e) !important;
+}
+.lang-link[class$="lookml"] a {
+  background: linear-gradient(to bottom, #8338a7, #56256e) !important;
+}
+.lang-link[class$="lookml"]:after {
+  background: linear-gradient(to bottom, #8338a7, #56256e);
+}
+.lang-link[class$="lookml"]:hover a {
+  color: #652B81 !important;
+}
+
+.lang-link[class$="eagle"] {
+  background: linear-gradient(to bottom, #b26907, #683e04) !important;
+}
+.lang-link[class$="eagle"] a {
+  background: linear-gradient(to bottom, #b26907, #683e04) !important;
+}
+.lang-link[class$="eagle"]:after {
+  background: linear-gradient(to bottom, #b26907, #683e04);
+}
+.lang-link[class$="eagle"]:hover a {
+  color: #814C05 !important;
+}
+
+.lang-link[class$="scheme"] {
+  background: linear-gradient(to bottom, #4d70f0, #133ede) !important;
+}
+.lang-link[class$="scheme"] a {
+  background: linear-gradient(to bottom, #4d70f0, #133ede) !important;
+}
+.lang-link[class$="scheme"]:after {
+  background: linear-gradient(to bottom, #4d70f0, #133ede);
+}
+.lang-link[class$="scheme"]:hover a {
+  color: #1E4AEC !important;
+}
+
+.lang-link[class$="squirrel"] {
+  background: linear-gradient(to bottom, #b30000, #670000) !important;
+}
+.lang-link[class$="squirrel"] a {
+  background: linear-gradient(to bottom, #b30000, #670000) !important;
+}
+.lang-link[class$="squirrel"]:after {
+  background: linear-gradient(to bottom, #b30000, #670000);
+}
+.lang-link[class$="squirrel"]:hover a {
+  color: #800000 !important;
+}
+
+.lang-link[class$="python"] {
+  background: linear-gradient(to bottom, #498cc4, #2f6592) !important;
+}
+.lang-link[class$="python"] a {
+  background: linear-gradient(to bottom, #498cc4, #2f6592) !important;
+}
+.lang-link[class$="python"]:after {
+  background: linear-gradient(to bottom, #498cc4, #2f6592);
+}
+.lang-link[class$="python"]:hover a {
+  color: #3572A5 !important;
+}
+
+.lang-link[class$="max"] {
+  background: linear-gradient(to bottom, #d7c3bc, #ba998c) !important;
+}
+.lang-link[class$="max"] a {
+  background: linear-gradient(to bottom, #d7c3bc, #ba998c) !important;
+}
+.lang-link[class$="max"]:after {
+  background: linear-gradient(to bottom, #d7c3bc, #ba998c);
+}
+.lang-link[class$="max"]:hover a {
+  color: #C4A79C !important;
+}
+
+.lang-link[class$="common-lisp"] {
+  background: linear-gradient(to bottom, #60c8a2, #38a37d) !important;
+}
+.lang-link[class$="common-lisp"] a {
+  background: linear-gradient(to bottom, #60c8a2, #38a37d) !important;
+}
+.lang-link[class$="common-lisp"]:after {
+  background: linear-gradient(to bottom, #60c8a2, #38a37d);
+}
+.lang-link[class$="common-lisp"]:hover a {
+  color: #3FB68B !important;
+}
+
+.lang-link[class$="latte"] {
+  background: linear-gradient(to bottom, #d3ffca, #93ff7e) !important;
+}
+.lang-link[class$="latte"] a {
+  background: linear-gradient(to bottom, #d3ffca, #93ff7e) !important;
+}
+.lang-link[class$="latte"]:after {
+  background: linear-gradient(to bottom, #d3ffca, #93ff7e);
+}
+.lang-link[class$="latte"]:hover a {
+  color: #A8FF97 !important;
+}
+
+.lang-link[class$="xquery"] {
+  background: linear-gradient(to bottom, #7960ec, #3f1be4) !important;
+}
+.lang-link[class$="xquery"] a {
+  background: linear-gradient(to bottom, #7960ec, #3f1be4) !important;
+}
+.lang-link[class$="xquery"]:after {
+  background: linear-gradient(to bottom, #7960ec, #3f1be4);
+}
+.lang-link[class$="xquery"]:hover a {
+  color: #5232E7 !important;
+}
+
+.lang-link[class$="omgrofl"] {
+  background: linear-gradient(to bottom, #f2eeff, #b6a2ff) !important;
+}
+.lang-link[class$="omgrofl"] a {
+  background: linear-gradient(to bottom, #f2eeff, #b6a2ff) !important;
+}
+.lang-link[class$="omgrofl"]:after {
+  background: linear-gradient(to bottom, #f2eeff, #b6a2ff);
+}
+.lang-link[class$="omgrofl"]:hover a {
+  color: #CABBFF !important;
+}
+
+.lang-link[class$="nimrod"] {
+  background: linear-gradient(to bottom, #479a76, #2f664e) !important;
+}
+.lang-link[class$="nimrod"] a {
+  background: linear-gradient(to bottom, #479a76, #2f664e) !important;
+}
+.lang-link[class$="nimrod"]:after {
+  background: linear-gradient(to bottom, #479a76, #2f664e);
+}
+.lang-link[class$="nimrod"]:hover a {
+  color: #37775B !important;
+}
+
+.lang-link[class$="systemverilog"] {
+  background: linear-gradient(to bottom, #eff2e4, #d0d9b1) !important;
+}
+.lang-link[class$="systemverilog"] a {
+  background: linear-gradient(to bottom, #eff2e4, #d0d9b1) !important;
+}
+.lang-link[class$="systemverilog"]:after {
+  background: linear-gradient(to bottom, #eff2e4, #d0d9b1);
+}
+.lang-link[class$="systemverilog"]:hover a {
+  color: #DAE1C2 !important;
+}
+
+.lang-link[class$="chapel"] {
+  background: linear-gradient(to bottom, #a4d266, #80b636) !important;
+}
+.lang-link[class$="chapel"] a {
+  background: linear-gradient(to bottom, #a4d266, #80b636) !important;
+}
+.lang-link[class$="chapel"]:after {
+  background: linear-gradient(to bottom, #a4d266, #80b636);
+}
+.lang-link[class$="chapel"]:hover a {
+  color: #8DC63F !important;
+}
+
+.lang-link[class$="groovy"] {
+  background: linear-gradient(to bottom, #edb882, #e39240) !important;
+}
+.lang-link[class$="groovy"] a {
+  background: linear-gradient(to bottom, #edb882, #e39240) !important;
+}
+.lang-link[class$="groovy"]:after {
+  background: linear-gradient(to bottom, #edb882, #e39240);
+}
+.lang-link[class$="groovy"]:hover a {
+  color: #E69F56 !important;
+}
+
+.lang-link[class$="dylan"] {
+  background: linear-gradient(to bottom, #867989, #5f5560) !important;
+}
+.lang-link[class$="dylan"] a {
+  background: linear-gradient(to bottom, #867989, #5f5560) !important;
+}
+.lang-link[class$="dylan"]:after {
+  background: linear-gradient(to bottom, #867989, #5f5560);
+}
+.lang-link[class$="dylan"]:hover a {
+  color: #6C616E !important;
+}
+
+.lang-link[class$="e"] {
+  background: linear-gradient(to bottom, #d6d85e, #babc2e) !important;
+}
+.lang-link[class$="e"] a {
+  background: linear-gradient(to bottom, #d6d85e, #babc2e) !important;
+}
+.lang-link[class$="e"]:after {
+  background: linear-gradient(to bottom, #d6d85e, #babc2e);
+}
+.lang-link[class$="e"]:hover a {
+  color: #CCCE35 !important;
+}
+
+.lang-link[class$="parrot"] {
+  background: linear-gradient(to bottom, #f7d539, #dbb609) !important;
+}
+.lang-link[class$="parrot"] a {
+  background: linear-gradient(to bottom, #f7d539, #dbb609) !important;
+}
+.lang-link[class$="parrot"]:after {
+  background: linear-gradient(to bottom, #f7d539, #dbb609);
+}
+.lang-link[class$="parrot"]:hover a {
+  color: #F3CA0A !important;
+}
+
+.lang-link[class$="grammatical-framework"] {
+  background: linear-gradient(to bottom, #98be99, #69a06b) !important;
+}
+.lang-link[class$="grammatical-framework"] a {
+  background: linear-gradient(to bottom, #98be99, #69a06b) !important;
+}
+.lang-link[class$="grammatical-framework"]:after {
+  background: linear-gradient(to bottom, #98be99, #69a06b);
+}
+.lang-link[class$="grammatical-framework"]:hover a {
+  color: #79AA7A !important;
+}
+
+.lang-link[class$="game-maker-language"] {
+  background: linear-gradient(to bottom, #b8e500, #7b9900) !important;
+}
+.lang-link[class$="game-maker-language"] a {
+  background: linear-gradient(to bottom, #b8e500, #7b9900) !important;
+}
+.lang-link[class$="game-maker-language"]:after {
+  background: linear-gradient(to bottom, #b8e500, #7b9900);
+}
+.lang-link[class$="game-maker-language"]:hover a {
+  color: #8FB200 !important;
+}
+
+.lang-link[class$="papyrus"] {
+  background: linear-gradient(to bottom, #7f00ff, #5900b3) !important;
+}
+.lang-link[class$="papyrus"] a {
+  background: linear-gradient(to bottom, #7f00ff, #5900b3) !important;
+}
+.lang-link[class$="papyrus"]:after {
+  background: linear-gradient(to bottom, #7f00ff, #5900b3);
+}
+.lang-link[class$="papyrus"]:hover a {
+  color: #6600CC !important;
+}
+
+.lang-link[class$="netlinx-erb"] {
+  background: linear-gradient(to bottom, #949cbd, #6470a0) !important;
+}
+.lang-link[class$="netlinx-erb"] a {
+  background: linear-gradient(to bottom, #949cbd, #6470a0) !important;
+}
+.lang-link[class$="netlinx-erb"]:after {
+  background: linear-gradient(to bottom, #949cbd, #6470a0);
+}
+.lang-link[class$="netlinx-erb"]:hover a {
+  color: #747FAA !important;
+}
+
+.lang-link[class$="clean"] {
+  background: linear-gradient(to bottom, #5d9dc4, #38779c) !important;
+}
+.lang-link[class$="clean"] a {
+  background: linear-gradient(to bottom, #5d9dc4, #38779c) !important;
+}
+.lang-link[class$="clean"]:after {
+  background: linear-gradient(to bottom, #5d9dc4, #38779c);
+}
+.lang-link[class$="clean"]:hover a {
+  color: #3F85AF !important;
+}
+
+.lang-link[class$="alloy"] {
+  background: linear-gradient(to bottom, #de7845, #b65220) !important;
+}
+.lang-link[class$="alloy"] a {
+  background: linear-gradient(to bottom, #de7845, #b65220) !important;
+}
+.lang-link[class$="alloy"]:after {
+  background: linear-gradient(to bottom, #de7845, #b65220);
+}
+.lang-link[class$="alloy"]:hover a {
+  color: #CC5C24 !important;
+}
+
+.lang-link[class$="pawn"] {
+  background: linear-gradient(to bottom, #e7cbab, #d5a670) !important;
+}
+.lang-link[class$="pawn"] a {
+  background: linear-gradient(to bottom, #e7cbab, #d5a670) !important;
+}
+.lang-link[class$="pawn"]:after {
+  background: linear-gradient(to bottom, #e7cbab, #d5a670);
+}
+.lang-link[class$="pawn"]:hover a {
+  color: #DBB284 !important;
+}
+
+.lang-link[class$="unrealscript"] {
+  background: linear-gradient(to bottom, #ba6a6b, #944445) !important;
+}
+.lang-link[class$="unrealscript"] a {
+  background: linear-gradient(to bottom, #ba6a6b, #944445) !important;
+}
+.lang-link[class$="unrealscript"]:after {
+  background: linear-gradient(to bottom, #ba6a6b, #944445);
+}
+.lang-link[class$="unrealscript"]:hover a {
+  color: #A54C4D !important;
+}
+
+.lang-link[class$="standard-ml"] {
+  background: linear-gradient(to bottom, #e58091, #d8415b) !important;
+}
+.lang-link[class$="standard-ml"] a {
+  background: linear-gradient(to bottom, #e58091, #d8415b) !important;
+}
+.lang-link[class$="standard-ml"]:after {
+  background: linear-gradient(to bottom, #e58091, #d8415b);
+}
+.lang-link[class$="standard-ml"]:hover a {
+  color: #DC566D !important;
+}
+
+.lang-link[class$="slim"] {
+  background: linear-gradient(to bottom, #ffb9aa, #ff7a5e) !important;
+}
+.lang-link[class$="slim"] a {
+  background: linear-gradient(to bottom, #ffb9aa, #ff7a5e) !important;
+}
+.lang-link[class$="slim"]:after {
+  background: linear-gradient(to bottom, #ffb9aa, #ff7a5e);
+}
+.lang-link[class$="slim"]:hover a {
+  color: #FF8F77 !important;
+}
+
+.lang-link[class$="perl6"] {
+  background: linear-gradient(to bottom, #2f2fff, #0000e2) !important;
+}
+.lang-link[class$="perl6"] a {
+  background: linear-gradient(to bottom, #2f2fff, #0000e2) !important;
+}
+.lang-link[class$="perl6"]:after {
+  background: linear-gradient(to bottom, #2f2fff, #0000e2);
+}
+.lang-link[class$="perl6"]:hover a {
+  color: #0000FB !important;
+}
+
+.lang-link[class$="julia"] {
+  background: linear-gradient(to bottom, #b892cb, #975fb2) !important;
+}
+.lang-link[class$="julia"] a {
+  background: linear-gradient(to bottom, #b892cb, #975fb2) !important;
+}
+.lang-link[class$="julia"]:after {
+  background: linear-gradient(to bottom, #b892cb, #975fb2);
+}
+.lang-link[class$="julia"]:hover a {
+  color: #A270BA !important;
+}
+
+.lang-link[class$="haskell"] {
+  background: linear-gradient(to bottom, #3ed35b, #24a03c) !important;
+}
+.lang-link[class$="haskell"] a {
+  background: linear-gradient(to bottom, #3ed35b, #24a03c) !important;
+}
+.lang-link[class$="haskell"]:after {
+  background: linear-gradient(to bottom, #3ed35b, #24a03c);
+}
+.lang-link[class$="haskell"]:hover a {
+  color: #29B544 !important;
+}
+
+.lang-link[class$="io"] {
+  background: linear-gradient(to bottom, #d61eb2, #93157a) !important;
+}
+.lang-link[class$="io"] a {
+  background: linear-gradient(to bottom, #d61eb2, #93157a) !important;
+}
+.lang-link[class$="io"]:after {
+  background: linear-gradient(to bottom, #d61eb2, #93157a);
+}
+.lang-link[class$="io"]:hover a {
+  color: #A9188D !important;
+}
+
+.lang-link[class$="rouge"] {
+  background: linear-gradient(to bottom, #ff00aa, #b30077) !important;
+}
+.lang-link[class$="rouge"] a {
+  background: linear-gradient(to bottom, #ff00aa, #b30077) !important;
+}
+.lang-link[class$="rouge"]:after {
+  background: linear-gradient(to bottom, #ff00aa, #b30077);
+}
+.lang-link[class$="rouge"]:hover a {
+  color: #CC0088 !important;
+}
+
+.lang-link[class$="racket"] {
+  background: linear-gradient(to bottom, #2c2cb8, #1d1d7a) !important;
+}
+.lang-link[class$="racket"] a {
+  background: linear-gradient(to bottom, #2c2cb8, #1d1d7a) !important;
+}
+.lang-link[class$="racket"]:after {
+  background: linear-gradient(to bottom, #2c2cb8, #1d1d7a);
+}
+.lang-link[class$="racket"]:hover a {
+  color: #22228F !important;
+}
+
+.lang-link[class$="ags-script"] {
+  background: linear-gradient(to bottom, #ecf5ff, #a0cbff) !important;
+}
+.lang-link[class$="ags-script"] a {
+  background: linear-gradient(to bottom, #ecf5ff, #a0cbff) !important;
+}
+.lang-link[class$="ags-script"]:after {
+  background: linear-gradient(to bottom, #ecf5ff, #a0cbff);
+}
+.lang-link[class$="ags-script"]:hover a {
+  color: #B9D9FF !important;
+}
+
+.lang-link[class$="dogescript"] {
+  background: linear-gradient(to bottom, #d8bc87, #c69c4d) !important;
+}
+.lang-link[class$="dogescript"] a {
+  background: linear-gradient(to bottom, #d8bc87, #c69c4d) !important;
+}
+.lang-link[class$="dogescript"]:after {
+  background: linear-gradient(to bottom, #d8bc87, #c69c4d);
+}
+.lang-link[class$="dogescript"]:hover a {
+  color: #CCA760 !important;
+}
+
+.lang-link[class$="nesc"] {
+  background: linear-gradient(to bottom, #b5c9d9, #83a4be) !important;
+}
+.lang-link[class$="nesc"] a {
+  background: linear-gradient(to bottom, #b5c9d9, #83a4be) !important;
+}
+.lang-link[class$="nesc"]:after {
+  background: linear-gradient(to bottom, #b5c9d9, #83a4be);
+}
+.lang-link[class$="nesc"]:hover a {
+  color: #94B0C7 !important;
+}
+
+.lang-link {
+  position: relative;
+  display: block;
+  color: #fff;
+  margin: 0;
+  float: left;
+  width: 100%;
+  cursor: pointer;
+}
+.lang-link:hover {
+  background: #fff !important;
+}
+.lang-link:hover a {
+  background: #fff !important;
+}
+.lang-link a {
+  color: currentColor !important;
+  padding: 0.5rem;
+  width: 70%;
+  height: 100%;
+  float: left;
+}
+.lang-link:after {
+  content: attr(data-count);
+  display: block;
+  width: 24px;
+  height: 24px;
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 100%;
+  background: currentColor;
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+}
+.ais-menu--item__active .lang-link:after {
+  background: #FFF !important;
+}
+.ais-menu--item__active .lang-link:after:hover {
+  background: #000 !important;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.gitch {
+  cursor: pointer;
+}

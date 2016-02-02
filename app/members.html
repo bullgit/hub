@@ -1,0 +1,157 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>bullgolia</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+  <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.13.0/css/ol.css" type="text/css">
+    <style>
+      .map {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+    <script src="http://openlayers.org/en/v3.13.0/build/ol.js" type="text/javascript"></script>
+</head>
+<body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+
+
+
+            <nav>
+              
+                <div id="map" class="map"></div>
+    
+            </nav>
+            <div class="container">
+
+                <div class="jumbotron">
+                <h1>bull<span>git-hub</span></h1>
+                <h3> <a href="/index.html" class="button">Repos</a> <a href="/members.html" class="button active">Members</a> <a href="/events.html" class="button">Events!</a></h3>
+
+                <div id="search-box_members"></div>
+
+              </div>
+             <!--  <textarea id="repo" style="float:left;width:33%;background:red"></textarea>
+              <textarea id="events" style="float:left;width:33%;background:blue"></textarea>
+              <textarea id="members" style="float:left;width:33%;background:green"></textarea>
+              <textarea id="teams" style="float:left;width:33%;background:orange"></textarea>
+              <div id="hooks" style="background:orange"></div> -->
+              <div class="row marketing content">
+                
+                <div id="hits-container_members"></div>
+                
+
+              </div>
+
+              <div class="footer">
+                <p>♥ from the Yeoman team</p>
+              </div>
+            </div>
+
+            <!-- build:js scripts/main.js -->
+            <script src="scripts/github.js"></script>
+            <!-- endbuild -->
+            <script>
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.MapQuest({layer: 'sat'})
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([30,30]),
+          zoom: 6
+        })
+      });
+
+
+var searchMembers = instantsearch({
+  appId: 'HMN1DHEQL1',
+  apiKey: 'dc4f15ee8f2decc359c15e9e092bed4c',
+  indexName: 'bullgit_members',
+  urlSync: true
+}); 
+
+searchMembers.addWidget(
+  instantsearch.widgets.searchBox({
+    container: '#search-box_members',
+    placeholder: 'Search for members...'
+  })
+  );
+
+var renderMap = {
+  // Called every time there is new data
+  render: function(options) {
+    
+
+    var g = document.querySelectorAll('.gitch');
+    for(var i = 0; i < g.length; i++) {
+      g[i].addEventListener('click', function(){
+        document.querySelector('#map').innerHTML = ''
+        var ll = this.getAttribute('data-pos').split(',');
+        var gitch = [ll[1],ll[0]]; // caution partner, read on...
+        // since we are using OSM, we have to transform the coordinates...
+        var gitchWebMercator = ol.proj.fromLonLat(gitch);
+        var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.MapQuest({layer: 'sat'})
+          })
+        ],
+        view: new ol.View({
+          center: gitchWebMercator,
+          zoom: 6
+        })
+      });
+      })
+    }
+  } 
+}
+var tpl = `<div class='card gitch' data-pos="{{latlon}}"> 
+              <div class='card_content user' > 
+                <header> 
+                <div>
+                  <img src="{{gravatar}}" alt="">
+                </div>
+                <h3>{{{_highlightResult.name.value}}}</h3> 
+                <h2>{{{_highlightResult.title.value}}}</h2> 
+                </header>
+                <section>
+                  <p><a href='https://github.com/{{github}}'>https:\/\/github.com/{{{_highlightResult.github.value}}}</a> or <a href='{{url}}'>{{{_highlightResult.url.value}}}</a> </p>
+                </section>
+              </div>
+            </div>`;
+
+searchMembers.addWidget(
+  instantsearch.widgets.hits({
+    container: '#hits-container_members',
+    templates: {
+      empty: 'No results',
+      item: tpl
+    },
+    hitsPerPage: 100
+  })
+  );
+searchMembers.addWidget(renderMap);
+
+searchMembers.start();
+
+
+      
+</script>
+</body>
+</html>

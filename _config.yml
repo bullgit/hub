@@ -1,0 +1,7 @@
+# the basic jekyll setup
+encoding: utf-8
+source: ./app/
+destination: ./app/_db
+
+repository: bullgit/bullgit.github.io
+gems: ['jekyll-github-metadata']

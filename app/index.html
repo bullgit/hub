@@ -1,0 +1,256 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>bullgolia</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+  <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+</head>
+<body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+
+
+            <nav>
+              <header>
+                <h2>Filters</h2>
+              </header>
+              <section>
+                <div>
+                  <h4>Popularity :</h4>
+                  <div id="popularity-selector"></div>
+                </div>                
+                <div>
+                  <h4>Forked :</h4>
+                  <div id="fork-selector"></div>
+                </div>  
+                 <div>
+                  <h4>Language :</h4>
+                  <div id="language"></div>
+                </div>  
+                <div>
+                  <div id="clear"></div>
+                </div>                
+              </section>
+              <footer>
+                <div id="stats-container"></div>
+              </footer>
+            </nav>
+
+            <div class="container">
+
+
+              <div class="jumbotron">
+                <h1>bull<span>git-hub</span></h1>
+                <h3> <a href="/index.html" class="button active">Repos</a> <a href="/members.html" class="button">Members</a> <a href="/events.html" class="button">Events!</a></h3>
+
+                <div id="search-box_repos"></div>
+
+              </div>
+             <!--  <textarea id="repo" style="float:left;width:33%;background:red"></textarea>
+              <textarea id="events" style="float:left;width:33%;background:blue"></textarea>
+              <textarea id="members" style="float:left;width:33%;background:green"></textarea>
+              <textarea id="teams" style="float:left;width:33%;background:orange"></textarea>
+              <div id="hooks" style="background:orange"></div> -->
+              <div class="row marketing content">
+                <div id="hits-container_repos"></div>
+
+              </div>
+
+              <div class="footer">
+                <p>♥ from the Yeoman team</p>
+              </div>
+            </div>
+            
+            <!-- build:js scripts/main.js -->
+            <script src="scripts/main.js"></script>
+            <script src="scripts/butt.js"></script>
+            <!-- endbuild -->
+            <script>
+
+
+
+  var searchRepos = instantsearch({
+    appId: 'HMN1DHEQL1',
+    apiKey: 'dc4f15ee8f2decc359c15e9e092bed4c',
+    indexName: 'bullgit_repos',
+    urlSync: true
+  }); 
+
+  searchRepos.addWidget(
+    instantsearch.widgets.searchBox({
+      container: '#search-box_repos',
+      placeholder: 'Search for repositories...'
+    })
+    );
+
+
+
+  var tpl = `<div class='card' 
+    data-created="{{created_at}}" 
+    data-update="{{updated_at}}"
+    data-stars="{{stargazers_count}}"
+    data-watch="{{watchers_count}}"
+    data-fork="{{forks_count}}"
+    data-lang="{{language}}"> 
+  <div class='card_content'> 
+    <header> 
+      <h3><a href='{{html_url}}'>{{{_highlightResult.name.value}}}</a></h3> 
+      <div class='stargazers' data-stars='{{stargazers_count}}'><span><em>{{stargazers_count}}</em><star-icon/></span></div>
+    </header>
+    <section>
+      <p>{{{_highlightResult.description.value}}}</p>
+    </section>
+    <footer>
+      <a href='{{html_url}}'>{{html_url}}</a>
+    </footer>
+  </div>
+</div>`;
+
+searchRepos.addWidget(
+  instantsearch.widgets.hits({
+    container: '#hits-container_repos',
+    templates: {
+      empty: 'No results',
+      item: tpl
+    },
+    hitsPerPage: 1000,
+
+  })
+  );
+
+searchRepos.addWidget(
+  instantsearch.widgets.numericSelector({
+    container: '#popularity-selector',
+    attributeName: 'stargazers_count',
+    operator: '>=',
+    options: [
+      {label: 'all', value: 0},
+      {label: '5 or more', value: 5},
+      {label: '10 or more', value: 10},
+      {label: '20 or more', value: 20},
+      {label: '30 or more', value: 30}
+    ]
+  })
+);
+
+searchRepos.addWidget(
+  instantsearch.widgets.numericSelector({
+    container: '#fork-selector',
+    attributeName: 'forks_count',
+    operator: '>=',
+    options: [
+      {label: 'all', value: 0},
+      {label: '1 or more', value: 1},
+      {label: '2 or more', value: 2},
+      {label: '3 or more', value: 3}
+    ]
+  })
+);
+searchRepos.addWidget(
+  instantsearch.widgets.menu({
+    container: '#language',
+    attributeName: 'language',
+    limit: 10,
+    templates: {
+      item: '<span class="lang-link {{name}}" data-count="{{count}}"><a>{{name}}</a> </span>'
+    }
+   
+  })
+);
+searchRepos.addWidget(
+  instantsearch.widgets.clearAll({
+    container: '#clear',
+    cssClasses: {
+      link: 'button --red'
+    },
+    templates: {
+      link: 'Reset everything'
+    },
+    autoHideContainer: false
+  })
+);
+
+searchRepos.addWidget(
+  instantsearch.widgets.stats({
+    container: '#stats-container'
+  })
+);
+var renderStars = {
+  // Called every time there is new data
+  render: function(options) {
+    var st = document.querySelectorAll('.stargazers');
+    for(var i = 0; i < st.length; i++) {
+      var val = st[i].getAttribute('data-stars');
+      st[i].style.color = val > 5 ? '#FDBC40' : '#ccc';
+    }
+  } 
+}
+
+var renderButts = {
+  render: function(options) {
+    var cd = document.querySelectorAll('.card');
+    for(var i = 0; i < cd.length; i++) {
+
+      var created_at = cd[i].getAttribute('data-created').split('UTC')[0],
+          updated_at = cd[i].getAttribute('data-update').split('UTC')[0],
+          stargazers_count = cd[i].getAttribute('data-stars'),
+          watchers_count = cd[i].getAttribute('data-watch'),
+          forks_count = cd[i].getAttribute('data-fork'),
+          language = cd[i].getAttribute('data-lang');
+      var buttTpl = `
+<div>Creation : <strong>${created_at}</strong></div>
+<div>Last update : <strong>${updated_at}</strong></div>
+<div>This repo got : <strong>${stargazers_count}</strong> stars and <strong>${watchers_count}</strong> watchers</div>
+<div>This project was forked <strong>${forks_count}</strong> times, and is essentially made of <strong>${language}</strong></div>`
+      cd[i].id="butt-"+i;
+
+      cd[i].style.animationDelay = i*(cd.length/20)/100 + "s";
+ 
+
+      butt({
+        id: i,
+        content: buttTpl,
+        direction: i&1 ? 'lateral' : 'vertical',
+        delay: '300ms',
+        button: {
+          url: false,
+          text: {
+            front: 'stats',
+            back: 'repository'
+          }
+        } 
+      })
+    }
+    var l = document.querySelectorAll('.lang-link');
+    for(var i = 0; i < l.length; i++) {
+      var c = l[i].classList[1];
+      var d = c.toLowerCase();
+      l[i].classList.remove(c)
+      l[i].classList.add(d)
+      // l[i].classList.add(l[i].classList)
+    }
+
+    var si = document.querySelectorAll('star-icon');
+    for(var i = 0; i < si.length; i++) {
+
+      si[i].innerHTML = '<svg aria-hidden="true" class="octicon octicon-star" height="24" role="img" version="1.1" viewBox="0 0 22 24" width="22"><path d="M14 6l-4.9-0.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14l4.33-2.33 4.33 2.33L10.4 9.26 14 6z"></path></svg>'
+    }
+  }
+}
+
+searchRepos.addWidget(renderStars);
+searchRepos.addWidget(renderButts);
+
+
+searchRepos.start();
+
+
+</script>
+</body>
+</html>
